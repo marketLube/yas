@@ -5,8 +5,14 @@
 }
 
 body {
-  font-family: "Inter", sans-serif !important;
+  font-family: "YAS Font", sans-serif !important;
   overflow-x: hidden;
+}
+
+.normal-title-txt {
+  font-family: "Bebas Neue";
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
 }
 
 .base-filter {
@@ -18,6 +24,54 @@ body {
   border: 1px solid #d6d1e6;
 }
 
+.side-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.side-bar-list {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: yellow;
+}
+.side-bar-list-item {
+  border: 1px solid red;
+  height: 80%;
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 1rem;
+}
+.side-bar-bottom {
+  border: 1px solid blue;
+  height: 10rem;
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.chat-with-us {
+  color: #fff;
+  border-radius: 5rem;
+  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(180deg, #0597e5 0%, #0758dd 100%);
+  display: flex;
+  gap: 0.5rem;
+}
+
 .landing-page {
   height: 100vh;
   background-color: lightgray;
@@ -27,8 +81,11 @@ body {
 }
 
 .product {
-  height: 100vh;
+  max-height: 100vh;
   width: 100%;
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 2rem;
 }
 .product-head {
   display: flex;
@@ -44,5 +101,17 @@ body {
 }
 .product-solo-thumbnail {
   width: 100%;
+  height: fit-content;
   background-color: #f0f0f0;
+  border-radius: 2rem;
+  padding: 1rem;
+}
+.product-solo-thumbnail__image {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(237, 187, 187);
+  border-radius: 1rem;
+}
+.product-solo-thumbnail__image img {
+  border-radius: 1rem;
 }

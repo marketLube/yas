@@ -1,16 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
-import store from "./global/store";
+import { RouterProvider } from "react-router-dom";
+import store from "./global/store.js";
 import App from "./App.jsx";
 import "./index.css";
 import "./../styles/styles.css";
 import "./../Sass/main.scss";
+import { router } from "./routes/router";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
+  </StrictMode>
 );

@@ -1,6 +1,9 @@
 .product {
   height: 100vh;
   width: 100%;
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 2rem;
 
   &-head {
     display: flex;
