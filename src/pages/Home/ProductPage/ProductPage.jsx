@@ -4,15 +4,21 @@ import { useSelector } from "react-redux";
 import ProductSoloThumbnail from "./ProductSoloThumnail/ProductSoloThumbnail";
 import MobSelectorGroup from "./MobSelectorGroup/MobSelectorGroup";
 import ProductCard from "../Components/ProductCard";
+import SideBar from "../../../layouts/SideBar/SideBar";
+import ChatWithUsButton from "../../../components/buttons/ChatWithUsButton";
+
 export default function ProductPage() {
   const { isMobile, isTablet } = useSelector((state) => state.responsive);
 
   return (
     <div className="product">
-      <ProductHead />
-      <ProductCard />
-      {(isMobile || isTablet) && <ProductSoloThumbnail />}
-      {(isMobile || isTablet) && <MobSelectorGroup />}
+      <SideBar />
+      <div className="product-content">
+        <ProductHead />
+        <ProductCard />
+        {(isMobile || isTablet) && <ProductSoloThumbnail />}
+        {(isMobile || isTablet) && <MobSelectorGroup />}
+      </div>
     </div>
   );
 }

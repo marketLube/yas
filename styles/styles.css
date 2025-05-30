@@ -5,8 +5,14 @@
 }
 
 body {
-  font-family: "Inter", sans-serif !important;
+  font-family: "YAS Font", sans-serif !important;
   overflow-x: hidden;
+}
+
+.normal-title-txt {
+  font-family: "Bebas Neue";
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
 }
 
 .base-filter {
@@ -30,6 +36,9 @@ body {
   height: 100vh;
   width: 100%;
   padding: 2rem;
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 2rem;
 }
 .product-head {
   display: flex;
