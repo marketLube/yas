@@ -1,10 +1,12 @@
 import React from "react";
 import AddtoCartbtn from "./AddtoCartbtn";
+
 export default function ProductCardPricetag({
   price,
   tax,
   currency,
   taxDescription,
+  onAddToCart,
 }) {
   return (
     <div className="ProductCard__card__pricetag">
@@ -13,10 +15,10 @@ export default function ProductCardPricetag({
           {currency} {price}
         </p>
         <p className="ProductCard__card__pricetag__price__tax">
-          {tax} {taxDescription}
+          +{tax} {taxDescription}
         </p>
       </div>
-      <AddtoCartbtn />
+      <AddtoCartbtn onClick={onAddToCart} />
     </div>
   );
 }

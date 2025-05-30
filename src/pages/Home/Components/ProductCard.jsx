@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import { Modal } from "antd";
 import Product1 from "../../../assets/images/product1.png";
 import ProductCardContent from "./ProductCardContent";
 import ProductCardPricetag from "./ProductCardPricetag";
+import ProductModal from "./ProductModal";
+
 export default function ProductCard() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
+  const showModal = (product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
   const product = [
     {
       image: Product1,
@@ -14,27 +30,127 @@ export default function ProductCard() {
       taxDescription: "VAT & tax",
       currency: "AED",
     },
+    {
+      image: Product1,
+      name: "Desert Safari Adventure",
+      description:
+        "Experience the thrill of dune bashing, camel riding, and a traditional Bedouin dinner under the stars in the Arabian desert.",
+      price: 150,
+      tax: +144.65,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+    {
+      image: Product1,
+      name: "Yacht Cruise",
+      description:
+        "Enjoy a luxury yacht cruise along the coastline with stunning views, water activities, and gourmet refreshments.",
+      price: 300,
+      tax: +289.29,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+    {
+      image: Product1,
+      name: "Helicopter Tour",
+      description:
+        "Take in breathtaking aerial views of the city's landmarks during an exclusive helicopter sightseeing tour.",
+      price: 500,
+      tax: +482.15,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+    {
+      image: Product1,
+      name: "Spa Retreat",
+      description:
+        "Indulge in a full-day spa retreat featuring luxury treatments, massage therapy, and wellness activities.",
+      price: 250,
+      tax: +241.07,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+    {
+      image: Product1,
+      name: "Culinary Workshop",
+      description:
+        "Learn to prepare authentic local cuisine with expert chefs in a professional kitchen setting.",
+      price: 180,
+      tax: +173.57,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+    {
+      image: Product1,
+      name: "Skydiving Experience",
+      description:
+        "Experience the ultimate adrenaline rush with a tandem skydiving jump over spectacular landscapes.",
+      price: 450,
+      tax: +433.93,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+    {
+      image: Product1,
+      name: "Golf Package",
+      description:
+        "Enjoy a round of golf at a championship course with professional instruction and premium equipment rental.",
+      price: 200,
+      tax: +192.86,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+    {
+      image: Product1,
+      name: "Cultural Tour",
+      description:
+        "Discover local heritage with guided visits to historical sites, museums, and traditional markets.",
+      price: 120,
+      tax: +115.71,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
   ];
 
   return (
     <div className="ProductCard">
-      {product.map((product) => (
-        <div className="ProductCard__card">
-          <div className="ProductCard__card__image">
-            <img src={product.image} alt={product.name} />
+      <div className="ProductCard__grid">
+        {product.map((product) => (
+          <div className="ProductCard__card" key={product.name}>
+            <div className="ProductCard__card__image">
+              <img src={product.image} alt={product.name} />
+            </div>
+            <ProductCardContent
+              name={product.name}
+              description={product.description}
+            />
+            <ProductCardPricetag
+              price={product.price}
+              tax={product.tax}
+              currency={product.currency}
+              taxDescription={product.taxDescription}
+              onAddToCart={() => showModal(product)}
+            />
           </div>
-          <ProductCardContent
-            name={product.name}
-            description={product.description}
+        ))}
+      </div>
+
+      <Modal
+        title={null}
+        open={isModalOpen}
+        onCancel={handleCancel}
+        footer={null}
+        width="85%"
+        className="product-modal"
+        centered={true}
+      >
+        {selectedProduct && (
+          <ProductModal
+            selectedProduct={selectedProduct}
+            onClose={handleCancel}
           />
-          <ProductCardPricetag
-            price={product.price}
-            tax={product.tax}
-            currency={product.currency}
-            taxDescription={product.taxDescription}
-          />
-        </div>
-      ))}
+        )}
+      </Modal>
     </div>
   );
 }
