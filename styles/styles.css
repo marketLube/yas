@@ -963,3 +963,164 @@ body {
   background-color: #e0e0e0;
   margin: 20px 0;
 }
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.payment-checkout {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 85vh;
+}
+
+.payment-checkout__header {
+  margin-bottom: 30px;
+}
+
+.back-button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.payment-checkout__steps {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding: 20px 0px;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  min-width: 500px;
+}
+
+.step span {
+  display: block;
+  color: #666;
+  margin-bottom: 8px;
+  color: #594f67;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.step h2 {
+  margin: 0;
+  color: #594f67;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.step.active h2 {
+  color: #444;
+}
+
+.step-line {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ddd;
+}
+
+.step.active .step-line {
+  background-color: #007bff;
+}
+
+.payment-checkout__content {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  border-radius: 2.5rem;
+  background: #fff;
+  box-shadow: 0px -16px 54px 0px rgba(27, 36, 53, 0.17);
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #666;
+}
+
+.form-control {
+  width: 100%;
+  border: none;
+  padding: 8px 0;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.confirm-button {
+  width: 100%;
+  padding: 16px;
+  background-color: #ffeb3b;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.payment-checkout__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.back-button {
+  flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+.payment-checkout__title {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0;
+  color: #18142b;
+  font-size: 2.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
