@@ -1,9 +1,13 @@
+@use "../abstract/variables" as *;
+
 .side-bar {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-wrap: nowrap;
+  font-size: 1rem;
 
   &-list {
     flex: 1;
@@ -11,25 +15,97 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: yellow;
 
-    &-item {
-      border: 1px solid red;
-      height: 100%;
-
+    & a {
+      padding: 1rem;
+      border: 3px solid red;
       display: flex;
       align-items: center;
       justify-content: left;
-      padding: 1rem;
+      height: 100%;
+      border-radius: 3rem;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+    }
+
+    &-item {
+      border: 2px solid $color-lightest-blue;
+      border-radius: 2rem;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+      color: $color-text-light-gray;
     }
   }
 
   &-bottom {
-    border: 1px solid blue;
     height: 10rem;
     display: flex;
     // justify-content: center;
     padding: 1rem;
     align-items: center;
+  }
+}
+
+.side-bar-list-item {
+  position: relative;
+  border: 2px solid $color-lightest-blue;
+  border-radius: 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: $color-text-light-gray;
+  padding: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+
+  // Base icon + text layout
+  &::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 2.5rem;
+    background: linear-gradient(45deg, #ff007a, #6a00ff, #00c3ff);
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  // Glowing effect
+  &::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 2.5rem;
+    box-shadow: 0 0 12px rgba(0, 195, 255, 0.4);
+    z-index: -3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &.active,
+  &.selected,
+  .active & {
+    // In case NavLink applies .active to parent
+    color: brown;
+    font-weight: bold;
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
   }
 }
