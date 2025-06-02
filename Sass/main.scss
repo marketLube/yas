@@ -10,5 +10,15 @@
 @use "base/responive";
 @use "components/buttons";
 
-@use "page/home";
+@use "page/home/home";
 @use "page/product/product";
+@use "layout/header";
+
+@use "page/Components/productCard";
+@use "page/Components/accessibilityModal";
+// @use "page/Components/cartModal";
+@use "page/Components/cartodal";
+
+@use "page/Payment/paymentCheckout";
+@use "page/Payment/paymentCheckoutHeader";
+@use "page/Payment/paymentCheckoutBody";

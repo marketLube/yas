@@ -16,3 +16,12 @@
 
   gap: 0.5rem;
 }
+
+.yellow-btn {
+  background-color: $color-yellow;
+  color: $color-white;
+  border-radius: 5rem;
+  // padding: 0.8rem 1.2rem;
+  color: $color-dark-gray;
+  width: 23rem;
+}
