@@ -25,7 +25,6 @@ export default function HeaderLogo() {
       width: "100%",
       justifyContent: isProductRoute ? "space-between" : "flex-start",
       gap: "1rem",
-      // height: isProductRoute ? "100px" : "118px",
 
     }}>
       <div 
