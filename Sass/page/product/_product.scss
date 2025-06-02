@@ -10,8 +10,10 @@
   &-head {
     display: flex;
     justify-content: left;
-    align-items: center;
+    align-items: flex-end;
     gap: 2rem;
+    position: relative;
+    top: 1.6rem;
 
     &__right {
       display: flex;
@@ -98,9 +100,9 @@
   font-weight: 500;
   margin: 0;
   color: #18142b;
-  font-size: 1.78rem;
+  font-size: 1.5rem;
   font-style: normal;
-  font-weight: 600;
+  
   line-height: normal;
   text-transform: capitalize;
 }
@@ -113,10 +115,10 @@
 
 .accessibility-button {
   background: #fff;
-  border: 2.1px solid #dcd6e5;
+  border: 2.6px solid #dcd6e5;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;

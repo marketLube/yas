@@ -1,7 +1,6 @@
 @use "../abstract/variables" as *;
 
 .header {
-  height: $header-size;
   width: 100%;
   background-color: $color-white;
   display: flex;

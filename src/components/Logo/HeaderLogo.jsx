@@ -42,6 +42,8 @@ export default function HeaderLogo() {
             alignItems: "center",
             height: isProductRoute ? "130px" : "118px",
             width: isProductRoute ? "12rem" : "",
+            position: isProductRoute ? "relative" : "static",
+            top: isProductRoute ? "1rem" : "0",
           }}
         >
           <img
@@ -49,7 +51,9 @@ export default function HeaderLogo() {
             alt="logo"
             className="header-logo-img"
             style={{
-              width: isProductRoute ? "5rem" : "7rem",
+              width: isProductRoute ? "7rem" : "7rem",
+              position: isProductRoute ? "relative" : "static",
+              top: isProductRoute ? "8px" : "0",
             }}
           />
           <img
@@ -57,7 +61,9 @@ export default function HeaderLogo() {
             alt="desc"
             className="header-logo-desc"
             style={{
-              width: isProductRoute ? "6rem" : "8rem",
+              width: isProductRoute ? "8rem" : "8rem",
+              position: isProductRoute ? "relative" : "static",
+              bottom: isProductRoute ? "16px" : "0",
             }}
           />
         </div>

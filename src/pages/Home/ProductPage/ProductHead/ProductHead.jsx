@@ -12,8 +12,8 @@ export default function ProductHead() {
       {isDesktop ||
         (isBigDesktop && (
           <div className="product-head__right">
-            <Selector label="Sort by" />
-            <Selector />
+            <Selector label="Sort by" value="price (high to low)" options={["price (high to low)"]} />
+            <Selector label="Filter by" value="attractions" options={["attractions"]} />
           </div>
         ))}
     </div>
