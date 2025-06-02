@@ -1,9 +1,16 @@
 import React from "react";
-import cardIcon from "../../assets/icons/card.png";
-import paypalIcon from "../../assets/icons/paypal.png";
-import visaIcon from "../../assets/icons/payment.png";
+import cardIcon from "../../../assets/icons/card.png";
+import paypalIcon from "../../../assets/icons/paypal.png";
+import visaIcon from "../../../assets/icons/payment.png";
 
-export default function CardPaymentDetail() {
+export default function CardPaymentDetail({ onPaymentComplete }) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you would typically handle the payment processing
+    // For now, we'll just trigger the success view
+    onPaymentComplete();
+  };
+
   return (
     <div className="payment-container">
       <h2 className="payment-title">Please enter payment details</h2>
@@ -30,7 +37,7 @@ export default function CardPaymentDetail() {
         </label>
       </div>
 
-      <form className="payment-form">
+      <form  className="payment-form">
         <div className="payment-input-row">
           <div className="payment-input-group">
             <label className="payment-input-label">
@@ -59,12 +66,13 @@ export default function CardPaymentDetail() {
             />
           </div>
         </div>
+
+
       </form>
       <div className="payment-button-container">
-        <button type="submit" className="payment-button">
+      <button type="submit" onClick={handleSubmit} className="payment-button">
           Make payment
         </button>
-
         <div className="card-logos">
           {/* <img src="/path-to/visa.png" alt="visa" className="card-logo" />
           <img

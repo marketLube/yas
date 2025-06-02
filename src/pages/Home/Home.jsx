@@ -4,7 +4,7 @@ import LandingPage from "./LandingPage";
 export default function Home({ children }) {
   return (
     <div className="home">
-      <LandingPage />
+      {/* <LandingPage /> */}
       {children}
     </div>
   );

@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import { Modal } from "antd";
 import Product1 from "../../../assets/images/product1.png";
+import Product2 from "../../../assets/images/product2.png";
+import Product3 from "../../../assets/images/product3.png";
+import Product4 from "../../../assets/images/product4.png";
+import Product5 from "../../../assets/images/product5.png";
+import Product6 from "../../../assets/images/product6.png";
+import Product7 from "../../../assets/images/product7.png";
+import Product8 from "../../../assets/images/product8.png";
+import Product9 from "../../../assets/images/product9.png";
+import Product10 from "../../../assets/images/product10.png";
 import ProductCardContent from "./ProductCardContent";
 import ProductCardPricetag from "./ProductCardPricetag";
 import ProductModal from "./ProductModal";
@@ -31,8 +40,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Desert Safari Adventure",
+      image: Product2,
+      name: "Roof Walk Experience",
       description:
         "Experience the thrill of dune bashing, camel riding, and a traditional Bedouin dinner under the stars in the Arabian desert.",
       price: 150,
@@ -41,8 +50,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Yacht Cruise",
+      image: Product3,
+      name: "4 Yas Island Theme Parks",
       description:
         "Enjoy a luxury yacht cruise along the coastline with stunning views, water activities, and gourmet refreshments.",
       price: 300,
@@ -51,8 +60,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Helicopter Tour",
+      image: Product4,
+      name: "1 Day Yas Waterworld Ya...",
       description:
         "Take in breathtaking aerial views of the city's landmarks during an exclusive helicopter sightseeing tour.",
       price: 500,
@@ -61,8 +70,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Spa Retreat",
+      image: Product5,
+      name: "3 Yas Island Theme Parks",
       description:
         "Indulge in a full-day spa retreat featuring luxury treatments, massage therapy, and wellness activities.",
       price: 250,
@@ -71,8 +80,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Culinary Workshop",
+      image: Product6,
+      name: "2 Yas Island Theme Parks",
       description:
         "Learn to prepare authentic local cuisine with expert chefs in a professional kitchen setting.",
       price: 180,
@@ -81,8 +90,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Skydiving Experience",
+      image: Product7,
+      name: "1 Day Warner Bros. Wor...",
       description:
         "Experience the ultimate adrenaline rush with a tandem skydiving jump over spectacular landscapes.",
       price: 450,
@@ -91,8 +100,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Golf Package",
+      image: Product8,
+      name: "1 Day Seaworld Yas Isla...",
       description:
         "Enjoy a round of golf at a championship course with professional instruction and premium equipment rental.",
       price: 200,
@@ -101,8 +110,8 @@ export default function ProductCard() {
       currency: "AED",
     },
     {
-      image: Product1,
-      name: "Cultural Tour",
+      image: Product9,
+      name: "1 Day Ferrari World Yas....",
       description:
         "Discover local heritage with guided visits to historical sites, museums, and traditional markets.",
       price: 120,
@@ -110,6 +119,17 @@ export default function ProductCard() {
       taxDescription: "VAT & tax",
       currency: "AED",
     },
+    {
+      image: Product10,
+      name: "VIP Experience",
+      description:
+        "Discover local heritage with guided visits to historical sites, museums, and traditional markets.",
+      price: 120,
+      tax: +115.71,
+      taxDescription: "VAT & tax",
+      currency: "AED",
+    },
+
   ];
 
   return (

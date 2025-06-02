@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import landingImage from "../../assets/images/MainImg.png";
 import YellowBtn from "../../components/buttons/YellowBtn";
 
 export default function LandingPage() {
+  const navigate = useNavigate();
+
+  const handleLanguageSelect = () => {
+    navigate("/product");
+  };
+
   return (
     <div
       className="landing-page"
@@ -20,8 +27,8 @@ export default function LandingPage() {
 
         <div className="landing-page__bottom">
           <div className="landing-page__subtitle">Choose Your Language</div>
-          <YellowBtn>Arabic</YellowBtn>
-          <YellowBtn>English</YellowBtn>
+          <YellowBtn onClick={handleLanguageSelect}>Arabic</YellowBtn>
+          <YellowBtn onClick={handleLanguageSelect}>English</YellowBtn>
         </div>
       </div>
     </div>

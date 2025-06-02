@@ -170,7 +170,7 @@ export default function BookingSection() {
         <div className="booking-actions">
           <button
             className="checkout-btnn"
-            // onClick={() => }
+            onClick={() => window.location.href = "/payment"}
           >
             Check out <span style={{ color: "red" }}>AED 985.00</span>
           </button>

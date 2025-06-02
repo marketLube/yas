@@ -1,7 +1,11 @@
 import React from "react";
 
-function YellowBtn({ children }) {
-  return <div className="btn yellow-btn">{children}</div>;
+function YellowBtn({ children, onClick }) {
+  return (
+    <button className="btn yellow-btn" onClick={onClick}>
+      {children}
+    </button>
+  );
 }
 
 export default YellowBtn;

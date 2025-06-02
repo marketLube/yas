@@ -6,7 +6,7 @@ import ChatWithUsButton from "../../components/buttons/ChatWithUsButton";
 export default function SideBar() {
   return (
     <nav className="side-bar normal-title-txt">
-      <Logo />
+      {/* <Logo /> */}
       <ul className="side-bar-list">
         <NavLink to="/">
           <li className="side-bar-list-item">All</li>

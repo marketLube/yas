@@ -9,7 +9,7 @@ import ChatWithUsButton from "../../../components/buttons/ChatWithUsButton";
 import AccessibilityModal from "../Components/AccessibilityModal";
 import CartModal from "../Components/CartModal";
 import MainProductHead from "./ProductHead/mainProductHead";
-import PaymentCheckoutBody from "../../PaymentCheckout/PaymentCheckoutBody";
+import PaymentCheckoutBody from "../../PaymentCheckout/Components/PaymentCheckoutBody";
 
 export default function ProductPage() {
   const { isMobile, isTablet } = useSelector((state) => state.responsive);
@@ -21,11 +21,11 @@ export default function ProductPage() {
     <div className="product">
       <SideBar />
       <div className="product-content">
-        <MainProductHead
+        {/* <MainProductHead
           onAccessibilityOpen={() => setIsAccessibilityModalOpen(true)}
           onCartOpen={() => setIsCartModalOpen(true)}
         />
-        <ProductHead label="Sort by" />
+        <ProductHead label="Sort by" /> */}
         <ProductCard />
         {(isMobile || isTablet) && <ProductSoloThumbnail />}
         {(isMobile || isTablet) && <MobSelectorGroup />}
