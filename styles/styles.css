@@ -1133,13 +1133,18 @@ body {
   border: none;
   flex: 1;
   display: flex;
-  padding: 1.2rem 2.5rem;
+  padding: 0.8rem 2.2rem;
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
   flex-shrink: 0;
   font-weight: 600;
   border-radius: 48px;
+  cursor: pointer;
+}
+.save-cart-btn:hover {
+  background-color: #ffa500;
+  color: black;
 }
 
 .checkout-btn {
@@ -1149,11 +1154,12 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
-  padding: 1.2rem 2.5rem;
+  padding: 0.8rem 2.2rem;
   width: 100%;
   align-items: center;
   gap: 0.625rem;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .delete-btn {

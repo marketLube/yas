@@ -4,8 +4,22 @@ import { MinusOutlined, PlusOutlined, DeleteOutlined } from "@ant-design/icons";
 import Expand from "../../../assets/icons/shrink.svg";
 import Ferrari from "../../../assets/images/product1.png";
 import DeleteIcon from "../../../assets/icons/delete.svg";
+import { useNavigate } from "react-router-dom";
 
 const CartModal = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate("/payment");
+    onClose(); // Close the modal when navigating
+  };
+
+  const handleSaveCart = () => {
+    onClose(); // Close the drawer when saving cart
+  };
+
+  if (!isOpen) return null;
+
   return (
     <Drawer
       title={null}
@@ -91,10 +105,12 @@ const CartModal = ({ isOpen, onClose }) => {
           </div>
 
           <div className="cart-actions">
-            <Button className="save-cart-btn">Save cart & pay later</Button>
-            <Button className="checkout-btn" type="primary">
+            <button className="save-cart-btn" onClick={handleSaveCart}>
+              Save cart & pay later
+            </button>
+            <button className="checkout-btn" onClick={handleCheckout}>
               Check out
-            </Button>
+            </button>
           </div>
         </div>
       </div>
