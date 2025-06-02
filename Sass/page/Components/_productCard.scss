@@ -224,10 +224,9 @@
 
 .price-details .tax {
   color: #594f67;
-  // font-family: Urbanist;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
   margin-bottom: 16px;
 }
@@ -435,7 +434,7 @@
 .calendar-container {
   background: white;
   border-radius: 16px;
-  padding: 40px;
+  padding: 0 40px;
   width: 40%;
 
   h2 {
@@ -448,6 +447,14 @@
     text-align: center;
     margin-bottom: 2rem;
   }
+}
+
+.calendar-wrapper {
+  border: 0.826px solid #ccdaf6;
+  border-radius: 2.6825rem;
+  border: 1px solid #6f677c;
+  background: #fff;
+  padding: 2rem;
 }
 
 /* Header with month and navigation */
@@ -467,6 +474,11 @@
 .calendar-header h3 {
   font-size: 18px;
   font-weight: 500;
+  color: #18142b;
+  text-align: right;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
 }
 
 .calendar-header button {
@@ -536,12 +548,13 @@
 }
 
 .guest-section {
-  padding: 24px;
+  padding: 0 24px;
   width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: top;
   justify-content: space-between;
+  align-self: flex-start;
 }
 
 .section-title {
@@ -561,7 +574,7 @@
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 0.826px solid #ccdaf6;
-  width: 31.5625rem;
+  width: 25.5625rem;
   height: fit-content;
   flex-shrink: 0;
 }
@@ -569,9 +582,15 @@
 .guest-summary {
   font-size: 18px;
   font-weight: 500;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   padding-bottom: 16px;
   border-bottom: 1px solid #eee;
+  text-align: center;
+  color: #18142b;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
 }
 
 .guest-controls {
@@ -587,8 +606,12 @@
 }
 
 .guest-label {
-  color: #333;
-  font-size: 14px;
+  color: #18142b;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
 }
 
 .counter-controls {
@@ -598,23 +621,25 @@
 }
 
 .counter-btn {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 1px solid #ddd;
+  border: 3.524px solid #dcd6e5;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   font-size: 18px;
-  color: #666;
+  color: #18142b;
+  font-weight: 700;
 }
 
 .counter-value {
   font-size: 16px;
   min-width: 20px;
   text-align: center;
+  color: #18142b;
 }
 
 .guest-note {
@@ -629,6 +654,8 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding-top: 20px;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .checkout-btn {
@@ -639,7 +666,19 @@
   padding: 16px;
   font-weight: 500;
   cursor: pointer;
-  width: 100%;
+}
+.checkout-btnn {
+  background: #ffe600;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  padding: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 32.875rem;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .cart-btn {
@@ -650,7 +689,9 @@
   padding: 16px;
   font-weight: 500;
   cursor: pointer;
-  width: 100%;
+  width: 32.875rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 .booking-section-divider {
@@ -664,5 +705,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   justify-content: space-between;
+  overflow-y: scroll;
+  min-height: 40vh;
+}
+
+.guest-row-divider {
+  width: 100%;
+  height: 0.826px;
+  background: #d9d9d9;
+  margin-top: 0rem;
 }

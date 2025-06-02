@@ -1,14 +1,22 @@
 import React from "react";
 import "./_search.scss";
-import CommonIcons from "../../../assets/icons/CommonIcons";
+import CommonIcons from "../../../assets/icons/lens.svg";
 
 export default function Search() {
   const fontSize = ".8rem";
 
   return (
     <div className="search base-filter" style={{ fontSize }}>
-      <input type="text" placeholder="Search Attractions “ Ferrari World”" />
-      <CommonIcons type="search" width="24px" height="24px" color="gray" />
+      <img
+        src={CommonIcons}
+        alt="search"
+        width="22px"
+        height="22px"
+        style={{
+          marginRight: "10px",
+        }}
+      />
+      <input type="text" placeholder="what are you looking for?" />
     </div>
   );
 }

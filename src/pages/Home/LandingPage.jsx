@@ -13,7 +13,7 @@ export default function LandingPage() {
     >
       <div className="landing-page-body">
         <div className="landing-page-body__title">
-          <h1 className="landing-page__title">YAS ICElAND</h1>
+          <h1 className="landing-page__title">YAS ISLAND</h1>
           <h1 className="landing-page__title">ABU DHABI</h1>
           <div className="landing-page__subtitle">And Let Me Tell You</div>
         </div>

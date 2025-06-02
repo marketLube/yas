@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "antd";
 import Invert from "../../../assets/icons/invert.svg";
 import Zoom from "../../../assets/icons/lens.svg";
+
 // import "./AccessibilityModal.css";
 
 export default function AccessibilityModal({ isOpen, onClose }) {
@@ -21,7 +22,9 @@ export default function AccessibilityModal({ isOpen, onClose }) {
 
         <div className="options-container">
           <div className="option-card">
-            <div className="option-icon">{/* <Invert /> */}</div>
+            <div className="option-icon">
+              <img src={Invert} alt="Invert" />
+            </div>
             <p>
               Color blindness
               <br />
@@ -30,7 +33,9 @@ export default function AccessibilityModal({ isOpen, onClose }) {
           </div>
 
           <div className="option-card">
-            <div className="option-icon">{/* <Zoom /> */}</div>
+            <div className="option-icon">
+              <img src={Zoom} alt="Zoom" />
+            </div>
             <p>Zoom mode</p>
           </div>
         </div>

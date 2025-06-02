@@ -8,6 +8,8 @@ import SideBar from "../../../layouts/SideBar/SideBar";
 import ChatWithUsButton from "../../../components/buttons/ChatWithUsButton";
 import AccessibilityModal from "../Components/AccessibilityModal";
 import CartModal from "../Components/CartModal";
+import MainProductHead from "./ProductHead/mainProductHead";
+import PaymentCheckoutBody from "../../PaymentCheckout/PaymentCheckoutBody";
 
 export default function ProductPage() {
   const { isMobile, isTablet } = useSelector((state) => state.responsive);
@@ -19,39 +21,14 @@ export default function ProductPage() {
     <div className="product">
       <SideBar />
       <div className="product-content">
-        <div className="product-header">
-          <button className="back-button" onClick={() => window.history.back()}>
-            <span>←</span> Back
-          </button>
-          <h1>Select attractions</h1>
-          <div className="header-actions">
-            <button
-              className="accessibility-button"
-              aria-label="Accessibility options"
-              onClick={() => setIsAccessibilityModalOpen(true)}
-            >
-              <span className="icon">♿</span>
-            </button>
-            <div className="language-selector">
-              <button className="language-button">
-                <span className="globe-icon">🌐</span>
-                <span>English</span>
-                <span className="chevron-down">▼</span>
-              </button>
-            </div>
-            <button
-              className="cart-button"
-              onClick={() => setIsCartModalOpen(true)}
-            >
-              View Cart
-            </button>
-          </div>
-        </div>
-        <ProductHead />
+        <MainProductHead
+          onAccessibilityOpen={() => setIsAccessibilityModalOpen(true)}
+          onCartOpen={() => setIsCartModalOpen(true)}
+        />
+        <ProductHead label="Sort by" />
         <ProductCard />
         {(isMobile || isTablet) && <ProductSoloThumbnail />}
         {(isMobile || isTablet) && <MobSelectorGroup />}
-
         <AccessibilityModal
           isOpen={isAccessibilityModalOpen}
           onClose={() => setIsAccessibilityModalOpen(false)}

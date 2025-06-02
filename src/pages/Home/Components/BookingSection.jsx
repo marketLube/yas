@@ -1,4 +1,6 @@
 import { useState } from "react";
+import LeftArrow from "../../../assets/icons/left.svg";
+import RightArrow from "../../../assets/icons/right.svg";
 
 export default function BookingSection() {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -80,9 +82,13 @@ export default function BookingSection() {
         <h2>Choose your date</h2>
         <div className="calendar-wrapper">
           <div className="calendar-header">
-            <button onClick={handlePrevMonth}>&lt;</button>
+            <button onClick={handlePrevMonth}>
+              <img src={LeftArrow} alt="Left Arrow" />
+            </button>
             <h3>{formatMonthYear(currentDate)}</h3>
-            <button onClick={handleNextMonth}>&gt;</button>
+            <button onClick={handleNextMonth}>
+              <img src={RightArrow} alt="Right Arrow" />
+            </button>
           </div>
 
           <div className="calendar-body">
@@ -110,20 +116,51 @@ export default function BookingSection() {
               <div className="guest-row">
                 <span className="guest-label">Adult ( 12 Yrs+ )</span>
                 <div className="counter-controls">
-                  <button className="counter-btn">-</button>
+                  <button
+                    className="counter-btn"
+                    onClick={() =>
+                      setGuests({ ...guests, adults: guests.adults - 1 })
+                    }
+                  >
+                    -
+                  </button>
                   <span className="counter-value">{guests.adults}</span>
-                  <button className="counter-btn">+</button>
+                  <button
+                    className="counter-btn"
+                    onClick={() =>
+                      setGuests({ ...guests, adults: guests.adults + 1 })
+                    }
+                  >
+                    +
+                  </button>
                 </div>
               </div>
+
+              <div className="guest-row-divider"></div>
 
               <div className="guest-row">
                 <span className="guest-label">Children ( &lt;12 Yrs )</span>
                 <div className="counter-controls">
-                  <button className="counter-btn">-</button>
+                  <button
+                    className="counter-btn"
+                    onClick={() =>
+                      setGuests({ ...guests, children: guests.children - 1 })
+                    }
+                  >
+                    -
+                  </button>
                   <span className="counter-value">{guests.children}</span>
-                  <button className="counter-btn">+</button>
+                  <button
+                    className="counter-btn"
+                    onClick={() =>
+                      setGuests({ ...guests, children: guests.children + 1 })
+                    }
+                  >
+                    +
+                  </button>
                 </div>
               </div>
+              <div className="guest-row-divider"></div>
             </div>
 
             <p className="guest-note">Kids below 3 go free</p>
@@ -131,7 +168,12 @@ export default function BookingSection() {
         </div>
 
         <div className="booking-actions">
-          <button className="checkout-btn">Check out AED 985.00</button>
+          <button
+            className="checkout-btnn"
+            // onClick={() => }
+          >
+            Check out <span style={{ color: "red" }}>AED 985.00</span>
+          </button>
           <button className="cart-btn">Save to cart</button>
         </div>
       </div>

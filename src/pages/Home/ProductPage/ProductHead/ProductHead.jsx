@@ -12,7 +12,7 @@ export default function ProductHead() {
       {isDesktop ||
         (isBigDesktop && (
           <div className="product-head__right">
-            <Selector />
+            <Selector label="Sort by" />
             <Selector />
           </div>
         ))}
