@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BookingSection from "./BookingSection";
+import Product1 from "../../../assets/images/product1.png"
 
 export default function ProductModal({ selectedProduct, onClose }) {
   const [showBookingSection, setShowBookingSection] = useState(false);
@@ -14,7 +15,7 @@ export default function ProductModal({ selectedProduct, onClose }) {
         <div className="product-modal-content">
           <>
             <div className="product-modal-image">
-              <img src={selectedProduct.image} alt={selectedProduct.name} />
+              <img src={Product1} alt={selectedProduct.name} />
             </div>
             <div className="product-modal-details">
               <h2>{selectedProduct.name}</h2>

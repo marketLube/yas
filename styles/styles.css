@@ -1198,7 +1198,6 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
-  height: 90vh;
 }
 
 .payment-checkout__header {
@@ -1222,9 +1221,9 @@ body {
 .payment-checkout__steps {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   position: relative;
-  padding: 20px 0px;
+  padding: 10px 0px;
 }
 
 .step {
@@ -1812,6 +1811,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 .payment-container .payment-methods .method {
   display: flex;
@@ -1853,7 +1853,7 @@ body {
 }
 
 .payment-form {
-  padding: 2rem 0 0 0;
+  padding: 0 0 0 0;
   width: 100%;
 }
 
