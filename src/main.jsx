@@ -3,10 +3,11 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import store from "./global/store.js";
-import App from "./App.jsx";
 import "./index.css";
 import "./../styles/styles.css";
 import "./../Sass/main.scss";
+import "./../Sass/main.css";
+
 import { router } from "./routes/router";
 
 createRoot(document.getElementById("root")).render(
