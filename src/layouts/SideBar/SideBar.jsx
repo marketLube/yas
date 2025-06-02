@@ -73,15 +73,15 @@ export default function SideBar() {
             <div className="item-text">Live</div>
           </li>
         </NavLink>
-        <NavLink to="/product">
+        {/* <NavLink to="/product">
           <li className="side-bar-list-item">
              <div className="item-icon">
-              {/* Add your icon img tag here */}
+              
               <img src={shop} alt="Shopping" />
             </div>
             <div className="item-text">Shopping</div>
           </li>
-        </NavLink>
+        </NavLink> */}
       </ul>
       <div className="side-bar-bottom">
         <ChatWithUsButton />

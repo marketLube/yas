@@ -4,12 +4,39 @@
   background-color: #f0f0f0;
   border-radius: 0.5rem;
   padding: 2rem;
+  overflow-y: scroll;
+  height:  500.105px;
+  scroll-behavior: smooth;
+  // /* Custom Scrollbar Styles */
+  &::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent or a light color */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #D1B8FF 0%, #68ABE7 100%);/* Gradient for the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+  }
+
+  // /* Handle on hover */
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: linear-gradient(to bottom, lighten(#6277D7, 10%), lighten(#9535ba, 10%), lighten(#cc2669, 10%)); /* Slightly lighter gradient on hover */
+  // }
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 3rem;
     justify-items: center;
+
+  // @media screen and (min-width: 1400px) and (max-width: 1600px) {
+  //   grid-template-columns: repeat(5, 1fr);
+  //   gap: 2rem;
+  // }
+
   }
 
   &__card {
