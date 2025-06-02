@@ -10,8 +10,9 @@
 @use "base/responive";
 @use "components/buttons";
 
-@use "page/home";
+@use "page/home/home";
 @use "page/product/product";
+@use "layout/header";
 
 @use "page/Components/productCard";
 @use "page/Components/accessibilityModal";
