@@ -1,10 +1,11 @@
 import React from "react";
-import LandingPage from "./LandingPage";
-
+import ResponsiveLanding from "../ResponsiveLanding";
+// import MobileLanding from "./Components/MobileView/MobileLanding";
 export default function Home({ children }) {
   return (
     <div className="home">
-      <LandingPage />
+      <ResponsiveLanding />
+      {/* <MobileLanding /> */}
       {children}
     </div>
   );

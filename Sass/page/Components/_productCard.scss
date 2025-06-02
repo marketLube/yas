@@ -666,3 +666,50 @@
   align-items: center;
   justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+  .ProductCard__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .ProductCard__card {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .ProductCard__card__image {
+    height: 120px;
+    border-radius: 0.5rem;
+  }
+
+  .ProductCard__card__content {
+    margin-top: 0.7rem;
+  }
+
+  .ProductCard__card__content__title {
+    font-size: 18px;
+  }
+
+  .ProductCard__card__content__description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .ProductCard__card__pricetag {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .AddtoCartbtn__button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+  }
+}

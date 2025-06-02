@@ -15,6 +15,23 @@ body {
   letter-spacing: 0.1rem;
 }
 
+.landing-page__title {
+  font-family: "Bebas Neue";
+  font-size: 116px;
+  letter-spacing: 0.5rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: #fff;
+}
+.landing-page__subtitle {
+  font-family: "YAS Font";
+  font-size: 24px;
+  color: #fff;
+  margin-top: 2rem;
+}
+
 .base-filter {
   border-radius: 2rem;
   padding: 0.5rem;
@@ -42,7 +59,7 @@ body {
 }
 .side-bar-list a {
   padding: 1rem;
-  border: 3px solid linear-gradient(180deg, #0597e5 0%, #0758dd 100%);
+  border: 3px solid red;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -53,8 +70,10 @@ body {
   border-right: none;
 }
 .side-bar-list-item {
-  border: 1px solid red;
+  border: 2px solid #80bfe4;
+  border-radius: 2rem;
   height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -66,6 +85,54 @@ body {
   display: flex;
   padding: 1rem;
   align-items: center;
+}
+
+.side-bar-list-item {
+  position: relative;
+  border: 2px solid #80bfe4;
+  border-radius: 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: rgba(24, 20, 43, 0.5);
+  padding: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+.side-bar-list-item::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 2.5rem;
+  background: linear-gradient(45deg, #ff007a, #6a00ff, #00c3ff);
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.side-bar-list-item::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 2.5rem;
+  box-shadow: 0 0 12px rgba(0, 195, 255, 0.4);
+  z-index: -3;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.side-bar-list-item.active, .side-bar-list-item.selected, .active .side-bar-list-item {
+  color: brown;
+  font-weight: bold;
+}
+.side-bar-list-item.active::before, .side-bar-list-item.active::after, .side-bar-list-item.selected::before, .side-bar-list-item.selected::after, .active .side-bar-list-item::before, .active .side-bar-list-item::after {
+  opacity: 1;
 }
 
 .btn {
@@ -84,17 +151,44 @@ body {
   gap: 0.5rem;
 }
 
+.yellow-btn {
+  background-color: #ffea00;
+  color: #fff;
+  border-radius: 5rem;
+  color: #333;
+  width: 23rem;
+}
+
 .landing-page {
-  height: 100vh;
+  height: calc(100vh - 118px);
   background-color: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
   background-size: 100% 100%;
 }
+.landing-page-body {
+  height: 70%;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 7rem;
+}
+.landing-page__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
 
 .product {
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   width: 100%;
   padding: 2rem;
   display: grid;
@@ -200,6 +294,16 @@ body {
 /* You might want to replace the emoji icons with actual SVG icons */
 .globe-icon {
   font-size: 16px;
+}
+
+.header {
+  height: 118px;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
 }
 
 .ProductCard {
@@ -680,6 +784,45 @@ body {
   justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .ProductCard__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+  .ProductCard__card {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 12px;
+  }
+  .ProductCard__card__image {
+    height: 120px;
+    border-radius: 0.5rem;
+  }
+  .ProductCard__card__content {
+    margin-top: 0.7rem;
+  }
+  .ProductCard__card__content__title {
+    font-size: 18px;
+  }
+  .ProductCard__card__content__description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .ProductCard__card__pricetag {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .AddtoCartbtn__button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 30px;
+    padding: 0.5rem 1rem;
+  }
+}
 .accessibility-modal .ant-modal-content {
   border-radius: 16px;
   padding: 3rem;

@@ -9,6 +9,7 @@
 @use "layout/footer";
 @use "base/responive";
 @use "components/buttons";
+@use "layout/sidebar";
 
 @use "page/home/home";
 @use "page/product/product";
@@ -22,3 +23,14 @@
 @use "page/Payment/paymentCheckout";
 @use "page/Payment/paymentCheckoutHeader";
 @use "page/Payment/paymentCheckoutBody";
+
+@use "page/Components/mobilelanding";
+@use "page/Components/mobileheader";
+@use "page/Components/mobiletop";
+@use "page/Components/attractions";
+@use "page/Components/mobilebottomnav";
+@use "page/Components/attractiondetailmodal";
+@use "page/Components/bookingmodal";
+@use "page/Components/mycart";
+@use "page/Components/emailverification";
+@use "page/Components/confirmemail";
