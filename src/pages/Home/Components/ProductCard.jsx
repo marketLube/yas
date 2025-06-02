@@ -135,7 +135,7 @@ export default function ProductCard() {
   return (
     <div className="ProductCard">
       <div className="ProductCard__grid">
-        {product.map((product) => (
+        {product.slice(0, 5).map((product) => (
           <div className="ProductCard__card" key={product.name}>
             <div className="ProductCard__card__image">
               <img src={product.image} alt={product.name} />
