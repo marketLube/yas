@@ -21,7 +21,7 @@ export default function AccessibilityModal({ isOpen, onClose }) {
         <p className="subtitle">choose options</p>
 
         <div className="options-container">
-          <div className="option-card">
+          <div className="option-card" >
             <div className="option-icon">
               <img src={Invert} alt="Invert" />
             </div>

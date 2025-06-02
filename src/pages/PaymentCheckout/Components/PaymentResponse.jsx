@@ -3,10 +3,12 @@ import Ticket from "../../../assets/icons/ticket.svg";
 import Excellent from "../../../assets/icons/great.svg";
 import Average from "../../../assets/icons/smile.svg";
 import Poor from "../../../assets/icons/poor.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function PaymentResponse() {
   const [selectedEmoji, setSelectedEmoji] = useState(null); // 'excellent', 'average', 'poor', or null
   const emojiRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -23,6 +25,10 @@ export default function PaymentResponse() {
 
   const handleEmojiClick = (emojiType) => {
     setSelectedEmoji(emojiType === selectedEmoji ? null : emojiType);
+
+    setTimeout(() => {
+      navigate("/");
+    }, 1000);
   };
 
   return (
@@ -37,7 +43,7 @@ export default function PaymentResponse() {
       <div className="feedback-section">
         <div className="feedback-title">How would you rate your experience</div>
         <div className="feedback-options" ref={emojiRef}>
-          <div className="option">
+          <div className="option" onClick={() => handleEmojiClick('excellent')}>
             <img
               className="emoji green"
               src={Excellent}
@@ -47,11 +53,10 @@ export default function PaymentResponse() {
                 backgroundColor: selectedEmoji === 'excellent' ? "green" : "#e1f1ff",
                 transition: "background-color 0.3s ease",
               }}
-              onClick={() => handleEmojiClick('excellent')}
             />
             <div className="label">Excellent</div>
           </div>
-          <div className="option">
+          <div className="option" onClick={() => handleEmojiClick('average')}>
             <img
               className="emoji yellow"
               src={Average}
@@ -61,11 +66,10 @@ export default function PaymentResponse() {
                 backgroundColor: selectedEmoji === 'average' ? "#FFBE0B" : "#e1f1ff",
                 transition: "background-color 0.3s ease",
               }}
-              onClick={() => handleEmojiClick('average')}
             />
             <div className="label">Average</div>
           </div>
-          <div className="option">
+          <div className="option" onClick={() => handleEmojiClick('poor')}>
             <img
               className="emoji red"
               src={Poor}
@@ -75,7 +79,6 @@ export default function PaymentResponse() {
                 backgroundColor: selectedEmoji === 'poor' ? "#F42E48" : "#e1f1ff",
                 transition: "background-color 0.3s ease",
               }}
-              onClick={() => handleEmojiClick('poor')}
             />
             <div className="label">Poor</div>
           </div>

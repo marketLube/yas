@@ -5,7 +5,7 @@
   border-radius: 0.5rem;
   padding: 2rem;
   overflow-y: scroll;
-  height:  500.105px;
+  height: 500.105px;
   scroll-behavior: smooth;
   // /* Custom Scrollbar Styles */
   &::-webkit-scrollbar {
@@ -17,7 +17,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #D1B8FF 0%, #68ABE7 100%);/* Gradient for the scrollbar thumb */
+    background: linear-gradient(
+      180deg,
+      #d1b8ff 0%,
+      #68abe7 100%
+    ); /* Gradient for the scrollbar thumb */
     border-radius: 4px; /* Rounded corners for the thumb */
   }
 
@@ -32,11 +36,10 @@
     gap: 3rem;
     justify-items: center;
 
-  // @media screen and (min-width: 1400px) and (max-width: 1600px) {
-  //   grid-template-columns: repeat(5, 1fr);
-  //   gap: 2rem;
-  // }
-
+    // @media screen and (min-width: 1400px) and (max-width: 1600px) {
+    //   grid-template-columns: repeat(5, 1fr);
+    //   gap: 2rem;
+    // }
   }
 
   &__card {
@@ -163,7 +166,7 @@
 }
 
 .product-modal .ant-modal-content {
-  padding: 3.5rem 3rem 2rem 0.8rem;
+  padding: 3.5rem 3rem 2rem 3rem;
   overflow: hidden;
   // border-radius: 12px;
   border-radius: 40px;
@@ -265,7 +268,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
-
+  font-size: 1rem;
   display: flex;
   width: 31.25rem;
   height: 4.625rem;
@@ -706,6 +709,7 @@
   text-align: center;
   margin-left: 50%;
   transform: translateX(-50%);
+  font-size: 1rem;
 }
 
 .cart-btn {
@@ -719,6 +723,7 @@
   width: 32.875rem;
   margin-left: 50%;
   transform: translateX(-50%);
+  font-size: 1rem;
 }
 
 .booking-section-divider {
@@ -732,10 +737,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   justify-content: space-between;
   overflow-y: scroll;
   min-height: 40vh;
+
+  &::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent or a light color */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      #d1b8ff 0%,
+      #68abe7 100%
+    ); /* Gradient for the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+  }
 }
 
 .guest-row-divider {

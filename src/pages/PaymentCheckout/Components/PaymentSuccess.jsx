@@ -6,7 +6,7 @@ export default function PaymentSuccess({ onLottieClick }) {
     <div
       className="payment-success"
       style={{
-        minHeight: "70vh",
+        minHeight: "60vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

@@ -261,6 +261,20 @@ body {
   line-height: normal;
 }
 
+.back-buttonn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #18142b;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 .cart-button {
   padding: 8px 16px;
   border: none;
@@ -306,8 +320,8 @@ body {
   background: #fff;
   border: 2.6px solid #dcd6e5;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
+  width: 40.5px;
+  height: 40.5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -363,7 +377,7 @@ body {
   background: transparent; /* Make the track transparent or a light color */
 }
 .ProductCard::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #D1B8FF 0%, #68ABE7 100%); /* Gradient for the scrollbar thumb */
+  background: linear-gradient(180deg, #d1b8ff 0%, #68abe7 100%); /* Gradient for the scrollbar thumb */
   border-radius: 4px; /* Rounded corners for the thumb */
 }
 .ProductCard__grid {
@@ -479,7 +493,7 @@ body {
 }
 
 .product-modal .ant-modal-content {
-  padding: 3.5rem 3rem 2rem 0.8rem;
+  padding: 3.5rem 3rem 2rem 3rem;
   overflow: hidden;
   border-radius: 40px;
   border: 2.353px solid #ccdaf6;
@@ -574,6 +588,7 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s;
+  font-size: 1rem;
   display: flex;
   width: 31.25rem;
   height: 4.625rem;
@@ -851,6 +866,7 @@ body {
   text-align: center;
   margin-left: 50%;
   transform: translateX(-50%);
+  font-size: 1rem;
 }
 
 .cart-btn {
@@ -864,6 +880,7 @@ body {
   width: 32.875rem;
   margin-left: 50%;
   transform: translateX(-50%);
+  font-size: 1rem;
 }
 
 .booking-section-divider {
@@ -880,6 +897,16 @@ body {
   justify-content: space-between;
   overflow-y: scroll;
   min-height: 40vh;
+}
+.guest-section-header-container::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+}
+.guest-section-header-container::-webkit-scrollbar-track {
+  background: transparent; /* Make the track transparent or a light color */
+}
+.guest-section-header-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d1b8ff 0%, #68abe7 100%); /* Gradient for the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the thumb */
 }
 
 .guest-row-divider {
@@ -942,6 +969,7 @@ body {
   border-radius: 0.74706rem;
   border: 1.494px solid #e3daf2;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .option-card:hover {

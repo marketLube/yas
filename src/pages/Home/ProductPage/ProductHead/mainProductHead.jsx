@@ -7,7 +7,7 @@ import downArrow from "../../../../assets/icons/downArrow.svg";
 export default function MainProductHead({ onAccessibilityOpen, onCartOpen }) {
   return (
     <div className="product-header">
-      <button className="back-button" onClick={() => window.history.back()}>
+      <button className="back-buttonn" onClick={() => window.history.back()}>
         <img src={arrow} alt="Back" />
         Back
       </button>
