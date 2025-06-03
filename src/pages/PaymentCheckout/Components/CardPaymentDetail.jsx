@@ -17,7 +17,14 @@ export default function CardPaymentDetail({ onPaymentComplete }) {
 
       <div className="payment-methods">
         <label className="method active">
-          <input type="radio" name="payment" defaultChecked />
+          <input
+            type="radio"
+            name="payment"
+            defaultChecked
+            className="method-input custom-radio"
+            style={{ height: "20px", width: "20px" }}
+          />
+          <span className="custom-radio-check"></span>
           <div className="method-content">
             <span className="card-icon">
               <img src={cardIcon} alt="card" />
@@ -27,7 +34,13 @@ export default function CardPaymentDetail({ onPaymentComplete }) {
         </label>
 
         <label className="method">
-          <input type="radio" name="payment" />
+          <input
+            type="radio"
+            name="payment"
+            className="method-input custom-radio"
+            style={{ height: "20px", width: "20px" }}
+          />
+          <span className="custom-radio-check"></span>
           <div className="method-content">
             <span className="paypal-icon">
               <img src={paypalIcon} alt="paypal" />
@@ -37,7 +50,7 @@ export default function CardPaymentDetail({ onPaymentComplete }) {
         </label>
       </div>
 
-      <form  className="payment-form">
+      <form className="payment-form">
         <div className="payment-input-row">
           <div className="payment-input-group">
             <label className="payment-input-label">
@@ -66,11 +79,9 @@ export default function CardPaymentDetail({ onPaymentComplete }) {
             />
           </div>
         </div>
-
-
       </form>
       <div className="payment-button-container">
-      <button type="submit" onClick={handleSubmit} className="payment-button">
+        <button type="submit" onClick={handleSubmit} className="payment-button">
           Make payment
         </button>
         <div className="card-logos">
