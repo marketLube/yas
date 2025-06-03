@@ -14,21 +14,19 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 0.5rem; // Reduced gap slightly
-
-    & a {
-      padding: 0; // Remove padding from a tag
-      border: none; // Remove red border
+    gap: 0rem;
+    border- & a {
+      padding: 0;
+      border: none;
       display: flex;
       align-items: center;
       justify-content: left;
       height: fit-content;
       border-radius: 3rem;
-      text-decoration: none; // Remove default underline
+      text-decoration: none;
     }
 
     &-item {
-      // Base styles handled below
     }
   }
 
@@ -37,47 +35,45 @@
     display: flex;
     padding: 1rem 0;
     align-items: center;
-    justify-content: center; // Center the chat button
+    justify-content: center;
 
     .chat-button {
-        // Add specific styles for the chat button if needed
-        border-radius: 2rem;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        // Add other button styles as needed
+      border-radius: 2rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
     }
   }
 }
 
 .side-bar-list-item {
   position: relative;
-  border: 3.801px solid #E3DAF2;
+  border: 2px solid #e3daf2;
   border-radius: 2rem;
-  height: fit-content; /* Keep height as fit-content */
+  height: fit-content;
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 0rem ; // Adjust padding for icon and text
-  color: $color-text-light-gray; // Default text color
+  padding: 0rem;
+  color: $color-text-light-gray;
   background: white;
   transition: all 0.3s ease;
-  cursor: pointer; // Indicate interactivity
-  overflow: hidden; // Hide overflow from pseudo-element initially
+  cursor: pointer;
+  overflow: hidden;
 
   .item-icon {
-    width: 3.5rem; // Icon size
+    width: 3.5rem;
     height: 3.5rem;
-    border-radius: 50%; // Circular background
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem; // Space between icon and text
-    background-color: #E9F7FD; // Default icon background color
+    margin-right: 1rem;
+    background-color: #e9f7fd;
     transition: all 0.3s ease;
 
     img {
-        width: 1.5rem; // Image size inside icon container
-        height: 1.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 
@@ -87,44 +83,10 @@
     transition: all 0.3s ease;
   }
 
-  // Active/Selected state
-  &.active,
-  &.selected {
-    border-color: transparent; // Hide default border when active
-    color: brown; // Active text color (adjust as needed)
-    font-weight: bold;
-    // Add a slight padding/margin adjustment to make space for the yellow line
-    padding-right: 1.5rem; // Add some padding on the right
-    padding-bottom: 1.2rem; // Add some padding on the bottom
-
-    .item-icon {
-      background: #E9F7FD; // Gradient background for active icon
-      box-shadow: 0 0 12px rgba(0, 195, 255, 0.4); // Glowing effect around active icon
-    }
-
-    // Yellow curved border effect
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -4px; // Position slightly outside the item
-        right: -4px; // Position slightly outside the item
-        width: calc(100% + 8px); // Make it slightly wider than the item
-        height: calc(100% + 8px); // Make it slightly taller than the item
-        border: 4px solid yellow; // Yellow border
-        border-radius: 2.5rem; // Match the item's border-radius with slight adjustment
-        border-top-color: transparent; // Hide top border
-        border-left-color: transparent; // Hide left border
-        z-index: -1; // Place behind the item content
-        transition: all 0.3s ease; // Add transition
-    }
-  }
-
-  // Styles for hover effect (optional)
   &:hover:not(.active):not(.selected) {
+    border: 2px solid #80bfe4;
 
-    border: 3.801px solid #80BFE4;
-  
-box-shadow: 0px 0.901px 7.206px var(--Number, 6px) #e9ebef;
+    box-shadow: 0px 0.901px 7.206px var(--Number, 6px) #e9ebef;
     .item-icon {
       // background: linear-gradient(to bottom right, lighten(#6277D7, 20%), lighten(#9535ba, 20%), lighten(#cc2669, 20%));
       // background-color: #E3DAF2;
@@ -132,3 +94,18 @@ box-shadow: 0px 0.901px 7.206px var(--Number, 6px) #e9ebef;
   }
 }
 
+.side-bar-list-item-container {
+  padding: 0.5rem;
+  border-top: 4px solid #ffffff;
+  border-right: none;
+  border-bottom: 4px solid #ffffff;
+  border-left: 4px solid #ffffff;
+  border-radius: 126.103px;
+  &.active {
+    border-top: 4px solid #f7d148;
+    border-right: none;
+    border-bottom: 4px solid #f7d148;
+    border-left: 4px solid #f7d148;
+    border-radius: 126.103px;
+  }
+}
