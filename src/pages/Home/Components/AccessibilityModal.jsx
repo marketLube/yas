@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "antd";
 import Invert from "../../../assets/icons/invert.svg";
 import Zoom from "../../../assets/icons/lens.svg";
+import closeIcon from "../../../assets/icons/close.svg";
 
 // import "./AccessibilityModal.css";
 
@@ -12,7 +13,11 @@ export default function AccessibilityModal({ isOpen, onClose }) {
       onCancel={onClose}
       footer={null}
       centered
-      closeIcon={<span className="close-button">×</span>}
+      closeIcon={
+        <span className="custom-modal-close">
+          <img src={closeIcon} alt="close" />
+        </span>
+      }
       className="accessibility-modal"
       width="40%"
     >
@@ -21,7 +26,7 @@ export default function AccessibilityModal({ isOpen, onClose }) {
         <p className="subtitle">choose options</p>
 
         <div className="options-container">
-          <div className="option-card" >
+          <div className="option-card">
             <div className="option-icon">
               <img src={Invert} alt="Invert" />
             </div>

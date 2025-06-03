@@ -1,6 +1,19 @@
 import React from "react";
+import { Modal } from "antd";
+import PromoCodeModalContent from "../Components/PromoCodeModalContent";
+import closeIcon from "../../../assets/icons/close.svg";
 
 export default function OrderSummary({ formData, setFormData }) {
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div className="order-summary">
       <h3 className="order-summary__title">1 day FERRARI WORLD YAS ISLAND</h3>
@@ -45,7 +58,9 @@ export default function OrderSummary({ formData, setFormData }) {
             }
             placeholder="Enter promo code"
           />
-          <button className="apply-btn">Apply</button>
+          <button className="apply-btn" onClick={() => setIsModalVisible(true)}>
+            Apply
+          </button>
         </div>
       </div>
 
@@ -69,6 +84,23 @@ export default function OrderSummary({ formData, setFormData }) {
           </span>
         </label>
       </div>
+
+      <Modal
+        open={isModalVisible}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={null}
+        centered
+        className="promo-modal"
+        width="40%"
+        closeIcon={
+          <span className="custom-modal-close">
+            <img src={closeIcon} alt="close" />
+          </span>
+        }
+      >
+        <PromoCodeModalContent />
+      </Modal>
     </div>
   );
 }

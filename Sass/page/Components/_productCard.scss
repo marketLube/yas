@@ -5,7 +5,7 @@
   border-radius: 0.5rem;
   padding: 2rem;
   overflow-y: scroll;
-  height: 500.105px;
+  height: 70vh;
   scroll-behavior: smooth;
   // /* Custom Scrollbar Styles */
   &::-webkit-scrollbar {
@@ -167,21 +167,41 @@
 
 .product-modal .ant-modal-content {
   padding: 3.5rem 3rem 2rem 3rem;
-  overflow: hidden;
-  // border-radius: 12px;
+  // overflow: hidden;
   border-radius: 40px;
   border: 2.353px solid #ccdaf6;
   background: #fff;
 }
+.product-modal .ant-modal-mask {
+  background: rgba(2, 7, 19, 0.67) !important;
+  backdrop-filter: blur(16.5px) !important;
+}
 
 .product-modal .ant-modal-close {
-  top: 16px;
-  right: 16px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: -115px;
+  right: -99%;
+  // z-index: 10;
   border-radius: 50%;
-  z-index: 1;
+  height: 50px;
+  width: 50px;
+  line-height: 1;
+  border: 3.524px solid #dcd6e5;
+  cursor: pointer;
+  background: #ffffff57;
+
+  &:hover {
+    background: #fff;
+  }
 }
+
+// .product-modal .ant-modal-close .custom-modal-close {
+//   position: absolute;
+//   top: -16px;
+//   right: 16px;
+//   color: #fff;
+//   background: rgba(0, 0, 0, 0.5);
+// }
 
 .product-modal-content {
   display: flex;
@@ -242,13 +262,10 @@
 
 .price-details h3 {
   color: #18142b;
-  // font-family: Urbanist;
   font-size: 1.375rem;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  // font-size: 24px;
-  // font-weight: bold;
   margin-bottom: 4px;
 }
 

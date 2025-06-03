@@ -13,6 +13,7 @@ import Product10 from "../../../assets/images/product10.png";
 import ProductCardContent from "./ProductCardContent";
 import ProductCardPricetag from "./ProductCardPricetag";
 import ProductModal from "./ProductModal";
+import closeIcon from "../../../assets/icons/close.svg";
 
 export default function ProductCard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -129,13 +130,12 @@ export default function ProductCard() {
       taxDescription: "VAT & tax",
       currency: "AED",
     },
-
   ];
 
   return (
     <div className="ProductCard">
       <div className="ProductCard__grid">
-        {product.slice(0, 5).map((product) => (
+        {product.map((product) => (
           <div className="ProductCard__card" key={product.name}>
             <div className="ProductCard__card__image">
               <img src={product.image} alt={product.name} />
@@ -163,6 +163,11 @@ export default function ProductCard() {
         width="85%"
         className="product-modal"
         centered={true}
+        closeIcon={
+          <span className="custom-modal-close">
+            <img src={closeIcon} alt="close" />
+          </span>
+        }
       >
         {selectedProduct && (
           <ProductModal

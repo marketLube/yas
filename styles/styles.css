@@ -367,7 +367,7 @@ body {
   border-radius: 0.5rem;
   padding: 2rem;
   overflow-y: scroll;
-  height: 500.105px;
+  height: 70vh;
   scroll-behavior: smooth;
 }
 .ProductCard::-webkit-scrollbar {
@@ -494,19 +494,30 @@ body {
 
 .product-modal .ant-modal-content {
   padding: 3.5rem 3rem 2rem 3rem;
-  overflow: hidden;
   border-radius: 40px;
   border: 2.353px solid #ccdaf6;
   background: #fff;
 }
 
+.product-modal .ant-modal-mask {
+  background: rgba(2, 7, 19, 0.67) !important;
+  backdrop-filter: blur(16.5px) !important;
+}
+
 .product-modal .ant-modal-close {
-  top: 16px;
-  right: 16px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+  top: -115px;
+  right: -99%;
   border-radius: 50%;
-  z-index: 1;
+  height: 50px;
+  width: 50px;
+  line-height: 1;
+  border: 3.524px solid #dcd6e5;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3411764706);
+}
+.product-modal .ant-modal-close:hover {
+  background: #fff;
 }
 
 .product-modal-content {
@@ -1017,6 +1028,24 @@ body {
 
 .continue-button:hover {
   background: #ffd600;
+}
+
+.accessibility-modal .ant-modal-close {
+  position: absolute;
+  top: -12%;
+  right: 0px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 32px;
+  line-height: 1;
+  border-radius: 70.476px;
+  border: 3.524px solid #dcd6e5;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3411764706);
+}
+.accessibility-modal .ant-modal-close:hover {
+  background: #fff;
 }
 
 .ant-drawer-content {
@@ -2046,4 +2075,97 @@ body {
   text-align: center;
   font-size: 1.125rem;
   font-style: normal;
+}
+
+.promo-modal-content {
+  text-align: center;
+  padding: 40px 32px;
+}
+.promo-modal-content__title {
+  margin-bottom: 8px;
+  color: #18142b;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.promo-modal-content__amount {
+  margin-bottom: 4px;
+  color: #594f67;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.promo-modal-content__saved {
+  color: #ada5b7;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+.promo-modal-content__divider {
+  border: none;
+  border-top: 2px solid #d9d9d9;
+  margin: 24px 0;
+}
+.promo-modal-content__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 3rem;
+  color: #594f67;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.promo-modal-content__row {
+  display: flex;
+  justify-content: space-between;
+}
+.promo-modal-content__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  color: #594f67;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.promo-modal-content__total-amount {
+  font-size: 28px;
+  color: #594f67;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.promo-modal .ant-modal-content {
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0px -16px 54px 0px rgba(27, 36, 53, 0.17);
+}
+
+/* Add this to your CSS file */
+.promo-modal .ant-modal-close {
+  position: absolute;
+  top: -12%;
+  right: 0px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 32px;
+  line-height: 1;
+  border-radius: 70.476px;
+  border: 3.524px solid #dcd6e5;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3411764706);
+}
+.promo-modal .ant-modal-close:hover {
+  background: #fff;
 }
