@@ -123,14 +123,14 @@ border- .side-bar-list a {
 .side-bar-list-item-container {
   padding: 0.5rem;
   border-top: 4px solid #ffffff;
-  border-right: none;
   border-bottom: 4px solid #ffffff;
   border-left: 4px solid #ffffff;
   border-radius: 126.103px;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 .side-bar-list-item-container.active {
   border-top: 4px solid #f7d148;
-  border-right: none;
   border-bottom: 4px solid #f7d148;
   border-left: 4px solid #f7d148;
   border-radius: 126.103px;
