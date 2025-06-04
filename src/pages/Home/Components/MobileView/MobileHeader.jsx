@@ -56,8 +56,13 @@ function MobileHeader() {
           </button>
           {showLangDropdown && (
             <div className="mobile-header__lang-dropdown">
-              <div className="mobile-header__lang-option">English</div>
-              <div className="mobile-header__lang-option">العربية</div>
+              <div className="mobile-header__lang-option">
+                <span className="mobile-header__lang-text">English</span>
+                <span className="mobile-header__lang-check">✓</span>
+              </div>
+              <div className="mobile-header__lang-option">
+                <span className="mobile-header__lang-text">العربية</span>
+              </div>
             </div>
           )}
         </div>

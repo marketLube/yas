@@ -15,7 +15,7 @@
   }
 
   &__logo {
-    height: 32px;
+    height: 50px;
     width: auto;
     display: block;
   }
@@ -28,8 +28,8 @@
 
   &__icon-btn,
   &__lang-btn {
-    background: #f6f6fa;
-    border: none;
+    background: white;
+    border: 2px solid #bcbcc9;
     border-radius: 2rem;
     padding: 6px 12px;
     display: flex;
@@ -56,5 +56,41 @@
     font-size: 12px;
     margin-left: 2px;
     color: #333;
+  }
+
+  &__lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    padding: 8px 0;
+    z-index: 1000;
+  }
+
+  &__lang-option {
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  &__lang-text {
+    font-size: 14px;
+    color: #333;
+  }
+
+  &__lang-check {
+    color: #007bff;
+    font-size: 14px;
+    font-weight: bold;
   }
 }

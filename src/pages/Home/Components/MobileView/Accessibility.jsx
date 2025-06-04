@@ -9,6 +9,11 @@ function Accessibility({ onClose, onContinue }) {
     window.scrollTo(0, 0);
   };
 
+  const handleContinue = () => {
+    navigate("/mobilelanding");
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="accessibility-popup-overlay">
       <div className="accessibility-popup-card">
@@ -97,7 +102,10 @@ function Accessibility({ onClose, onContinue }) {
             <div className="accessibility-popup-label">Zoom mode</div>
           </div>
         </div>
-        <button className="accessibility-popup-continue" onClick={onContinue}>
+        <button
+          className="accessibility-popup-continue"
+          onClick={handleContinue}
+        >
           Continue
         </button>
       </div>

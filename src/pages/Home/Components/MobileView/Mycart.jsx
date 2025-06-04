@@ -129,7 +129,7 @@ function Mycart({ onClose, onBack, onCheckout, onSaveAndPayLater }) {
           <button className="cart-modal__checkout" onClick={onCheckout}>
             Check out
           </button>
-          <button className="cart-modal__save" onClick={() => navigate(-1)}>
+          <button className="cart-modal__save" onClick={onSaveAndPayLater}>
             Save cart & pay later
           </button>
         </div>

@@ -3,18 +3,22 @@
   flex-direction: column;
   gap: 16px;
   padding: 12px 0;
+  background-color: white;
 }
 
 .attraction-card {
   display: flex;
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(44, 44, 84, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px white;
   overflow: hidden;
   border: 1.5px solid #f2f2f2;
-  padding: 8px;
+  padding: 9px;
   align-items: flex-start;
   gap: 12px;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: -0.5rem;
 
   &__img {
     width: 80px;
@@ -41,7 +45,7 @@
 
   &__title {
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     color: #231942;
     margin-bottom: 2px;
     white-space: nowrap;
@@ -51,7 +55,7 @@
   }
 
   &__desc {
-    font-size: 13px;
+    font-size: 16px;
     color: #6c6c8a;
     margin-bottom: 4px;
     white-space: nowrap;
@@ -75,7 +79,7 @@
     border-radius: 2rem;
     padding: 8px 22px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(44, 44, 84, 0.06);
     transition: background 0.2s;
@@ -88,9 +92,10 @@
     align-items: center;
     gap: 8px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     color: #231942;
-    margin-top: 2px;
+    margin-top: 4px;
+    text-align: right;
   }
 
   &__vat {

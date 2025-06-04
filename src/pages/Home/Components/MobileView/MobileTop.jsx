@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import allIcon from "../../../../assets/images/header1.svg";
 import attractionsIcon from "../../../../assets/images/header2.svg";
@@ -8,6 +8,33 @@ import diningIcon from "../../../../assets/images/header5.svg";
 import searchIcon from "../../../../assets/images/searchicon.svg";
 
 function MobileTop() {
+  const [showSortDropdown, setShowSortDropdown] = useState(false);
+  const [showFilterDropdown, setShowFilterDropdown] = useState(false);
+  const sortBtnRef = useRef(null);
+  const filterBtnRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (sortBtnRef.current && !sortBtnRef.current.contains(event.target)) {
+        setShowSortDropdown(false);
+      }
+      if (
+        filterBtnRef.current &&
+        !filterBtnRef.current.contains(event.target)
+      ) {
+        setShowFilterDropdown(false);
+      }
+    }
+    if (showSortDropdown || showFilterDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSortDropdown, showFilterDropdown]);
+
   return (
     <div>
       <div className="mobile-top">
@@ -50,12 +77,41 @@ function MobileTop() {
           </button>
         </div>
         <div className="mobile-top-search-section__filters">
-          <button className="mobile-top-search-section__filter-btn">
-            Sort by <span className="chevron">&#9662;</span>
-          </button>
-          <button className="mobile-top-search-section__filter-btn">
-            Filter by <span className="chevron">&#9662;</span>
-          </button>
+          <div style={{ position: "relative" }} ref={sortBtnRef}>
+            <button
+              className="mobile-top-search-section__filter-btn"
+              onClick={() => setShowSortDropdown(!showSortDropdown)}
+            >
+              Sort by <span className="chevron">&#9662;</span>
+            </button>
+            {showSortDropdown && (
+              <div className="mobile-top-search-section__dropdown">
+                <div className="mobile-top-search-section__dropdown-option">
+                  <span>Price (High to Low)</span>
+                  <span className="mobile-top-search-section__check">✓</span>
+                </div>
+                <div className="mobile-top-search-section__dropdown-option">
+                  <span>Price (Low to High)</span>
+                </div>
+              </div>
+            )}
+          </div>
+          <div style={{ position: "relative" }} ref={filterBtnRef}>
+            <button
+              className="mobile-top-search-section__filter-btn"
+              onClick={() => setShowFilterDropdown(!showFilterDropdown)}
+            >
+              Filter by <span className="chevron">&#9662;</span>
+            </button>
+            {showFilterDropdown && (
+              <div className="mobile-top-search-section__dropdown">
+                <div className="mobile-top-search-section__dropdown-option">
+                  <span>Attractions</span>
+                  <span className="mobile-top-search-section__check">✓</span>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

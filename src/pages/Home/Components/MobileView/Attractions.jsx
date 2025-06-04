@@ -95,6 +95,7 @@ function Attractions() {
   const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
   const [showExperience, setShowExperience] = useState(false);
   const [showPromoCode, setShowPromoCode] = useState(false);
+  const [previousModal, setPreviousModal] = useState(null);
 
   const navigate = useNavigate();
 
@@ -126,11 +127,11 @@ function Attractions() {
                   >
                     Add
                   </button>
+                  <div className="attraction-card__price">
+                    <span>{item.price}</span>
+                  </div>
                   <span className="attraction-card__vat">{item.vat}</span>
                 </div>
-              </div>
-              <div className="attraction-card__price">
-                <span>{item.price}</span>
               </div>
             </div>
           </div>
@@ -153,6 +154,7 @@ function Attractions() {
           onClose={() => setShowBookingModal(false)}
           onSaveToCart={() => {
             setShowBookingModal(false);
+            setPreviousModal("booking");
             setShowMyCart(true);
           }}
           onCheckout={() => {
@@ -167,7 +169,12 @@ function Attractions() {
       )}
       {showMyCart && (
         <Mycart
-          onClose={() => setShowMyCart(false)}
+          onClose={() => {
+            setShowMyCart(false);
+            if (previousModal === "booking") {
+              setShowBookingModal(true);
+            }
+          }}
           onCheckout={() => {
             setShowMyCart(false);
             setShowEmailVerification(true);
@@ -178,7 +185,9 @@ function Attractions() {
           }}
           onBack={() => {
             setShowMyCart(false);
-            setShowAttractionDetail(true);
+            if (previousModal === "booking") {
+              setShowBookingModal(true);
+            }
           }}
         />
       )}
