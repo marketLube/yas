@@ -9,7 +9,15 @@ import Mycart from "./Mycart";
 import EmailVerification from "./EmailVerification";
 import ConfirmEmail from "./ConfirmEmail";
 import CheckOut from "./CheckOut";
-
+import MakePayment from "./MakePayment";
+import Accessibility from "./Accessibility";
+import MobileHeader from "./MobileHeader";
+import MobileTop from "./MobileTop";
+import { useNavigate, Outlet } from "react-router-dom";
+import MobileLanding from "./MobileLanding";
+import PromoCodeModal from "./PromoCode";
+import PaymentSuccessModal from "./PaymentSuccessful";
+import Experience1 from "./Experience1";
 // Example data (replace with your real data or props)
 const attraction = [
   {
@@ -56,6 +64,22 @@ const attraction = [
     price: "AED 1,295",
     vat: "+ 96.43 VAT & tax",
   },
+  {
+    id: 6,
+    image: frame2,
+    title: "Driving experience",
+    desc: "Drive your dream car with. Love speed? Then gear up for the ride of your life only here at Ferrari World Abu Dhabi. Home to the world's fastest rollercoaster, the highest loop ride, the tallest space-frame structure ever built on the planet and over 40 record-breaking attractions.....",
+    price: "AED 1,295",
+    vat: "+ 96.43 VAT & tax",
+  },
+  {
+    id: 7,
+    image: frame2,
+    title: "Driving experience",
+    desc: "Drive your dream car with. Love speed? Then gear up for the ride of your life only here at Ferrari World Abu Dhabi. Home to the world's fastest rollercoaster, the highest loop ride, the tallest space-frame structure ever built on the planet and over 40 record-breaking attractions.....",
+    price: "AED 1,295",
+    vat: "+ 96.43 VAT & tax",
+  },
 ];
 
 function Attractions() {
@@ -63,12 +87,21 @@ function Attractions() {
   const [showAttractionDetail, setShowAttractionDetail] = useState(false);
   const [showBookingModal, setShowBookingModal] = useState(false);
   const [showMyCart, setShowMyCart] = useState(false);
+  const [showAccessibility, setShowAccessibility] = useState(true);
   const [showEmailVerification, setShowEmailVerification] = useState(false);
-  const [showConfirmEmail, setShowConfirmEmail] = useState(false);
+  const [showConfirmEmail, setShowConfirmEmail] = useState(true);
   const [showCheckOut, setShowCheckOut] = useState(false);
+  const [showMakePayment, setShowMakePayment] = useState(false);
+  const [showPaymentSuccess, setShowPaymentSuccess] = useState(false);
+  const [showExperience, setShowExperience] = useState(false);
+  const [showPromoCode, setShowPromoCode] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <>
+      <MobileHeader />
+      <MobileTop />
       <div className="attractions-list">
         {attraction.map((item) => (
           <div className="attraction-card" key={item.id}>
@@ -118,23 +151,19 @@ function Attractions() {
       {showBookingModal && (
         <BookingModal
           onClose={() => setShowBookingModal(false)}
-          onBack={() => {
-            setShowBookingModal(false);
-            setShowAttractionDetail(true);
-          }}
           onSaveToCart={() => {
             setShowBookingModal(false);
             setShowMyCart(true);
+          }}
+          onCheckout={() => {
+            setShowBookingModal(false);
+            setShowEmailVerification(true);
           }}
         />
       )}
       {showMyCart && (
         <Mycart
           onClose={() => setShowMyCart(false)}
-          onBack={() => {
-            setShowMyCart(false);
-            setShowBookingModal(true);
-          }}
           onCheckout={() => {
             setShowMyCart(false);
             setShowEmailVerification(true);
@@ -146,28 +175,53 @@ function Attractions() {
           onClose={() => setShowEmailVerification(false)}
           onConfirmEmail={() => {
             setShowEmailVerification(false);
-            setShowConfirmEmail(true);
+            setShowCheckOut(true);
           }}
-        />
-      )}
-      {showConfirmEmail && (
-        <ConfirmEmail
-          onBack={() => {
-            setShowConfirmEmail(false);
-            setShowEmailVerification(true);
-          }}
-          onConfirm={(otp) => {
-            setShowConfirmEmail(false);
-          }}
-          onResend={() => {}}
         />
       )}
       {showCheckOut && (
-        <ConfirmEmail
+        <CheckOut
           onClose={() => setShowCheckOut(false)}
-          onConfirmEmail={() => {
+          onApplyPromo={() => {
             setShowCheckOut(false);
+            setShowPromoCode(true);
           }}
+          onProceedToPayment={() => {
+            setShowCheckOut(false);
+            setShowMakePayment(true);
+          }}
+        />
+      )}
+      {showPromoCode && (
+        <PromoCodeModal
+          onClose={() => {
+            setShowPromoCode(false);
+            setShowCheckOut(true);
+          }}
+        />
+      )}
+      {showMakePayment && (
+        <MakePayment
+          onClose={() => setShowMakePayment(false)}
+          onPaymentSuccess={() => {
+            setShowMakePayment(false);
+            setShowPaymentSuccess(true);
+          }}
+        />
+      )}
+      {showPaymentSuccess && (
+        <PaymentSuccessModal
+          onClose={() => setShowPaymentSuccess(false)}
+          onShowExperience={() => {
+            setShowPaymentSuccess(false);
+            setShowExperience(true);
+          }}
+        />
+      )}
+      {showExperience && (
+        <Experience1
+          onClose={() => setShowExperience(false)}
+          // ...other props as needed
         />
       )}
     </>

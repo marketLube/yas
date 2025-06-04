@@ -1,24 +1,66 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import logo from "../../../../assets/images/moblogo.svg"; // Update path if needed
 // Update path if needed
 import accessibilityIcon from "../../../../assets/images/accessibility.svg"; // Replace with your icon
 import globeIcon from "../../../../assets/images/global.svg"; // Replace with your icon
+import { useNavigate } from "react-router-dom";
 
 function MobileHeader() {
+  const navigate = useNavigate();
+  const [showLangDropdown, setShowLangDropdown] = useState(false);
+  const langBtnRef = useRef(null);
+
+  // Optional: Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (langBtnRef.current && !langBtnRef.current.contains(event.target)) {
+        setShowLangDropdown(false);
+      }
+    }
+    if (showLangDropdown) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showLangDropdown]);
+
   return (
     <div className="mobile-header">
       <div className="mobile-header__left">
         <img src={logo} alt="YAS Island Logo" className="mobile-header__logo" />
       </div>
       <div className="mobile-header__right">
-        <button className="mobile-header__icon-btn" aria-label="Accessibility">
+        <button
+          className="mobile-header__icon-btn"
+          aria-label="Accessibility"
+          onClick={() => {
+            navigate("/accessibility");
+            window.scrollTo(0, 0);
+          }}
+        >
           <img src={accessibilityIcon} alt="Accessibility" />
         </button>
-        <button className="mobile-header__lang-btn" aria-label="Language">
-          <img src={globeIcon} alt="Language" />
-          <span>En</span>
-          <span className="chevron">&#9662;</span>
-        </button>
+        <div style={{ position: "relative" }} ref={langBtnRef}>
+          <button
+            className="mobile-header__lang-btn"
+            aria-label="Language"
+            onClick={() => setShowLangDropdown((v) => !v)}
+            type="button"
+          >
+            <img src={globeIcon} alt="Language" />
+            <span>En</span>
+            <span className="chevron">&#9662;</span>
+          </button>
+          {showLangDropdown && (
+            <div className="mobile-header__lang-dropdown">
+              <div className="mobile-header__lang-option">English</div>
+              <div className="mobile-header__lang-option">العربية</div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

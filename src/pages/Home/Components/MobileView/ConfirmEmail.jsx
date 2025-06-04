@@ -38,40 +38,40 @@ function ConfirmEmail({
     )}`;
 
   return (
-    <div className="cart-modal-overlay">
-      <div className="cart-modal email-verification-modal">
-        <div className="email-verification-header-fixed">
+    <div className="confirm-email__overlay">
+      <div className="confirm-email__modal">
+        <div className="confirm-email__header">
           <MobileHeader />
         </div>
-        <div className="email-verification-content">
-          <div className="email-verification__title">
-            Guest details and payment
-          </div>
-          <button className="email-verification__back-btn" onClick={onBack}>
+        <div className="confirm-email__content">
+          <div className="confirm-email__title">Guest details and payment</div>
+          <button className="confirm-email__back-btn" onClick={onBack}>
             ←
           </button>
-          <div className="email-verification__steps">
-            <div className="email-verification__step email-verification__step--active">
+          <div className="confirm-email__steps">
+            <div className="confirm-email__step confirm-email__step--active">
               Step 1<br />
               <span>Email verification</span>
             </div>
-            <div className="email-verification__step">
+            <div className="confirm-email__step">
               Step 2<br />
               <span>Checkout</span>
             </div>
           </div>
-          <div className="email-verification__step-underline"></div>
-          <div className="email-verification__form-container">
-            <div className="email-verification__label">EMAIL ADDRESS *</div>
+          <div className="confirm-email__step-underline"></div>
+          <div className="confirm-email__form-container">
+            <div className="confirm-email__label">EMAIL ADDRESS *</div>
             <div
-              className="email-verification__input"
+              className="confirm-email__input-value"
               style={{ marginBottom: 16 }}
             >
               {email}
             </div>
-            <div className="otp-section">
-              <div className="otp-section__label">ENTER VERIFICATION CODE</div>
-              <div className="otp-section__inputs">
+            <div className="confirm-email__otp-section">
+              <div className="confirm-email__otp-label">
+                ENTER VERIFICATION CODE
+              </div>
+              <div className="confirm-email__otp-inputs">
                 {otp.map((digit, idx) => (
                   <input
                     key={idx}
@@ -79,25 +79,25 @@ function ConfirmEmail({
                     type="text"
                     inputMode="numeric"
                     maxLength={1}
-                    className="otp-section__input"
+                    className="confirm-email__otp-input"
                     value={digit}
                     onChange={(e) => handleOtpChange(e.target.value, idx)}
                   />
                 ))}
               </div>
-              <div className="otp-section__info">
+              <div className="confirm-email__otp-info">
                 Verification code has been sent to <b>{email}</b>
                 <br />
-                <span className="otp-section__info-warning">
+                <span className="confirm-email__otp-warning">
                   Please check your spam or junk mail folder
                 </span>
               </div>
-              <div className="otp-section__actions">
+              <div className="confirm-email__otp-actions">
                 <span>
                   Will Expire In <b>{formatTime(timer)}</b>
                 </span>
                 <button
-                  className="otp-section__resend"
+                  className="confirm-email__otp-resend"
                   onClick={() => {
                     setTimer(180);
                     if (onResend) onResend();
@@ -109,7 +109,7 @@ function ConfirmEmail({
               </div>
             </div>
             <button
-              className="email-verification__confirm-btn"
+              className="confirm-email__confirm-btn"
               style={{ marginTop: 24 }}
               onClick={() => onConfirm && onConfirm(otp.join(""))}
             >

@@ -1,23 +1,23 @@
-// Checkout Modal Overlay and Container
-.cart-modal-overlay {
+// === Modal Overlay and Container ===
+.email-checkout__overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(44, 44, 84, 0.18);
+  background: #f4f3f3;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.cart-modal.email-verification-modal {
+.email-checkout__container {
   max-width: 400px;
   width: 100%;
-  height: 95vh;
-  border-radius: 24px;
-  box-shadow: 0 2px 16px rgba(44, 44, 84, 0.1);
+  height: 100vh;
+  // border-radius: 24px;
+  // box-shadow: 0 2px 16px rgba(44, 44, 84, 0.1);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -25,7 +25,8 @@
   overflow: hidden;
 }
 
-.email-verification-header-fixed {
+// === Header ===
+.email-checkout__header {
   position: sticky;
   top: 0;
   left: 0;
@@ -35,21 +36,36 @@
   display: flex;
   align-items: center;
   padding: 18px 0;
-  background: #fff;
+  background: #f4f3f3;
 }
 
-.email-verification-content {
+// === Scrollable Content ===
+.email-checkout__content {
   flex: 1 1 auto;
   overflow-y: auto;
-  padding-bottom: 24px;
+  // padding-bottom: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  // margin-top: 70px;
+  margin-top: -30px;
   min-height: 0;
-  margin-top: 70px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f4f3f3;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #bdbdc6;
+    border-radius: 3px;
+  }
 }
 
-.email-verification__title {
+// === Title ===
+.email-checkout__title {
   font-size: 22px;
   font-weight: 700;
   color: #231942;
@@ -57,7 +73,8 @@
   text-align: center;
 }
 
-.email-verification__steps {
+// === Steps ===
+.email-checkout__steps {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -65,7 +82,7 @@
   margin-bottom: 0;
 }
 
-.email-verification__step {
+.email-checkout__step {
   font-size: 15px;
   color: #bdbdc6;
   text-align: center;
@@ -75,14 +92,14 @@
     font-size: 15px;
     margin-top: 2px;
   }
-}
-.email-verification__step--active {
-  color: #231942;
-  font-weight: 700;
-  border-bottom: 2px solid #1976d2;
+  &--active {
+    color: #231942;
+    font-weight: 700;
+    border-bottom: 2px solid #1976d2;
+  }
 }
 
-.email-verification__step-underline {
+.email-checkout__underline {
   width: 100%;
   max-width: 340px;
   height: 2px;
@@ -90,23 +107,41 @@
   margin: 0 auto 24px auto;
 }
 
-.email-verification__form-container {
+// === Form Container ===
+.email-checkout__form-container {
   width: 90%;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto 24px auto;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 2px 16px rgba(44, 44, 84, 0.1);
-  padding: 32px 18px 32px 18px;
+  padding: 32px 18px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #bdbdc6;
+    border-radius: 3px;
+  }
 }
 
-.email-verification__form {
+// === Form ===
+.email-checkout__form {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
 }
 
-.email-verification__label {
+.email-checkout__label {
   font-size: 15px;
   color: #231942;
   font-weight: 600;
@@ -116,7 +151,7 @@
   gap: 8px;
 }
 
-.email-verification__input {
+.email-checkout__input {
   border: none;
   border-bottom: 2px solid #231942;
   font-size: 16px;
@@ -127,8 +162,8 @@
   width: 100%;
 }
 
-.email-verification__confirm-btn {
-  background: #ffe600;
+.email-checkout__btn {
+  background: #ffea00;
   color: #231942;
   border: none;
   border-radius: 2rem;
@@ -146,25 +181,27 @@
   }
 }
 
-// --- Checkout summary box ---
-.checkout-summary-box {
+// === Summary Box ===
+.email-checkout__summary {
   background: #f6f8fa;
   border-radius: 12px;
   padding: 18px 12px 12px 12px;
-  margin-bottom: 18px;
-  margin-top: 8px;
+  margin: 8px 0 18px;
   font-size: 15px;
   color: #231942;
-  .checkout-summary-title {
+
+  &-title {
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 8px;
   }
-  .checkout-summary-row {
+
+  &-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 4px;
     font-size: 15px;
+
     &--total {
       font-weight: 700;
       font-size: 16px;
@@ -173,14 +210,15 @@
   }
 }
 
-// --- Promo code box ---
-.checkout-promo-box {
+// === Promo Code ===
+.email-checkout__promo {
   margin-bottom: 16px;
-  .checkout-promo-apply {
-    background: #ffe600;
+
+  &-apply {
+    background: white;
     color: #231942;
-    border: none;
-    border-radius: 1.5rem;
+    border: 1px solid #231942;
+    border-radius: 0.5rem;
     padding: 8px 18px;
     font-size: 15px;
     font-weight: 600;
@@ -192,8 +230,8 @@
   }
 }
 
-// --- Checkboxes ---
-.checkout-checkboxes {
+// === Checkboxes ===
+.email-checkout__checkboxes {
   margin-bottom: 12px;
   label {
     font-size: 14px;

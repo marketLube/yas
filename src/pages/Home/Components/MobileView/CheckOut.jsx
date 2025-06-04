@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import MobileHeader from "./MobileHeader"; // Adjust the import path as needed
+import MobileHeader from "./MobileHeader";
 
-function CheckOut() {
+function CheckOut({ onClose, onProceedToPayment, onApplyPromo }) {
   const [firstName, setFirstName] = useState("vivek");
-  const [lastName, setLastName] = useState("eracheri");
+  const [lastName, setLastName] = useState("panashi");
   const [country, setCountry] = useState("UAE");
   const [nationality, setNationality] = useState("UAE");
   const [phone, setPhone] = useState("527263748");
@@ -11,53 +11,58 @@ function CheckOut() {
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [receiveComms, setReceiveComms] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (acceptTerms) {
+      onProceedToPayment();
+    }
+  };
+
   return (
-    <div className="cart-modal-overlay">
-      <div className="cart-modal email-verification-modal">
-        <div className="email-verification-header-fixed">
+    <div className="email-checkout__overlay">
+      <div className="email-checkout__container">
+        <div className="email-checkout__header">
           <MobileHeader />
         </div>
-        <div className="email-verification-content">
-          <div className="email-verification__title">
-            Guest details and payment
-          </div>
-          <div className="email-verification__steps">
-            <div className="email-verification__step">
+        <div className="email-checkout__content">
+          <div className="email-checkout__title">Guest details and payment</div>
+          <div className="email-checkout__steps">
+            <div className="email-checkout__step">
               Step 1<br />
               <span>Email verification</span>
             </div>
-            <div className="email-verification__step email-verification__step--active">
+            <div className="email-checkout__step email-checkout__step--active">
               Step 2<br />
               <span>Checkout</span>
             </div>
           </div>
-          <div className="email-verification__step-underline"></div>
-          <div className="email-verification__form-container">
-            <form className="email-verification__form">
-              <label className="email-verification__label">
+          <div className="email-checkout__underline"></div>
+          <div className="email-checkout__form-container">
+            <form className="email-checkout__form" onSubmit={handleSubmit}>
+              <label className="email-checkout__label">
                 FIRST NAME *
                 <input
                   type="text"
-                  className="email-verification__input"
+                  className="email-checkout__input"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   required
                 />
               </label>
-              <label className="email-verification__label">
+              <label className="email-checkout__label">
                 LAST NAME *
                 <input
                   type="text"
-                  className="email-verification__input"
+                  className="email-checkout__input"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   required
                 />
               </label>
-              <label className="email-verification__label">
+              <label className="email-checkout__label">
                 COUNTRY OF RESIDENCE *
                 <select
-                  className="email-verification__input"
+                  className="email-checkout__input"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                   required
@@ -65,13 +70,12 @@ function CheckOut() {
                   <option value="UAE">UAE</option>
                   <option value="India">India</option>
                   <option value="USA">USA</option>
-                  {/* Add more countries as needed */}
                 </select>
               </label>
-              <label className="email-verification__label">
+              <label className="email-checkout__label">
                 NATIONALITY *
                 <select
-                  className="email-verification__input"
+                  className="email-checkout__input"
                   value={nationality}
                   onChange={(e) => setNationality(e.target.value)}
                   required
@@ -79,10 +83,9 @@ function CheckOut() {
                   <option value="UAE">UAE</option>
                   <option value="India">India</option>
                   <option value="USA">USA</option>
-                  {/* Add more nationalities as needed */}
                 </select>
               </label>
-              <label className="email-verification__label">
+              <label className="email-checkout__label">
                 PHONE NUMBER (PREFERRED NUMBER) *
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                   <span style={{ fontWeight: 600, color: "#231942" }}>
@@ -90,7 +93,7 @@ function CheckOut() {
                   </span>
                   <input
                     type="tel"
-                    className="email-verification__input"
+                    className="email-checkout__input"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     required
@@ -98,35 +101,33 @@ function CheckOut() {
                 </div>
               </label>
 
-              {/* Order summary */}
-              <div className="checkout-summary-box">
-                <div className="checkout-summary-title">
+              <div className="email-checkout__summary">
+                <div className="email-checkout__summary-title">
                   1 day FERRARI WORLD YAS ISLAND
                 </div>
-                <div className="checkout-summary-row">
+                <div className="email-checkout__summary-row">
                   <span>DATES & GUESTS</span>
                   <span>
                     THU 08- FEB 2025 &nbsp; ADULT - 2 &nbsp; CHILDREN - 1
                   </span>
                 </div>
-                <div className="checkout-summary-row">
+                <div className="email-checkout__summary-row">
                   <span>Sub total :</span>
                   <span>AED 935.71</span>
                 </div>
-                <div className="checkout-summary-row">
+                <div className="email-checkout__summary-row">
                   <span>vat & tax :</span>
                   <span>+ 49.29 VAT & Tax</span>
                 </div>
-                <div className="checkout-summary-row checkout-summary-row--total">
+                <div className="email-checkout__summary-row email-checkout__summary-row--total">
                   <span>Total :</span>
                   <span>AED 985.00</span>
                 </div>
               </div>
 
-              {/* Promo code */}
-              <div className="checkout-promo-box">
+              <div className="email-checkout__promo">
                 <label
-                  className="email-verification__label"
+                  className="email-checkout__label"
                   style={{ marginBottom: 0 }}
                 >
                   ENTER YOUR PROMO CODE TO GET DISCOUNT
@@ -134,18 +135,21 @@ function CheckOut() {
                 <div style={{ display: "flex", gap: 8 }}>
                   <input
                     type="text"
-                    className="email-verification__input"
+                    className="email-checkout__input"
                     value={promo}
                     onChange={(e) => setPromo(e.target.value)}
                   />
-                  <button type="button" className="checkout-promo-apply">
+                  <button
+                    type="button"
+                    className="email-checkout__promo-apply"
+                    onClick={onApplyPromo}
+                  >
                     Apply
                   </button>
                 </div>
               </div>
 
-              {/* Checkboxes */}
-              <div className="checkout-checkboxes">
+              <div className="email-checkout__checkboxes">
                 <label
                   style={{ display: "flex", alignItems: "center", gap: 8 }}
                 >
@@ -175,18 +179,15 @@ function CheckOut() {
                 </label>
               </div>
 
-              {/* Proceed button */}
               <button
-                className="email-verification__confirm-btn"
-                type="submit"
-                style={{
-                  background: "#ffe600",
-                  color: "#231942",
-                  fontWeight: 700,
-                  fontSize: 18,
-                  marginTop: 16,
-                }}
+                className="email-checkout__btn"
+                type="button"
                 disabled={!acceptTerms}
+                onClick={() => {
+                  if (acceptTerms) {
+                    onProceedToPayment();
+                  }
+                }}
               >
                 Proceed to payment
               </button>

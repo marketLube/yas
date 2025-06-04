@@ -35,6 +35,10 @@
   &__item--active {
     background: linear-gradient(90deg, #fff8a5 0%, #fff 100%);
     color: #231942;
-    border-radius: 16px 16px 0 0;
+    // border-radius: 16px 16px 0 0;
   }
+}
+
+.mobile-bottom-nav__item img {
+  filter: brightness(0) saturate(100%);
 }

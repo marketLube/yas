@@ -3,6 +3,7 @@ import backIcon from "../../../../assets/images/back.svg";
 import expandIcon from "../../../../assets/images/expand.svg";
 import trashIcon from "../../../../assets/images/trash.svg";
 import frame1 from "../../../../assets/images/frame1.png";
+import { useNavigate } from "react-router-dom";
 
 function Mycart({ onClose, onBack, onCheckout }) {
   // Example cart data
@@ -50,9 +51,11 @@ function Mycart({ onClose, onBack, onCheckout }) {
     setCartItems((items) => items.filter((item) => item.id !== id));
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className="cart-modal-overlay">
-      <div className="cart-modal">
+      <div className="cart-modal" style={{ height: "95vh" }}>
         <div className="cart-modal__header">
           <button className="cart-modal__back" onClick={onBack}>
             <img src={backIcon} alt="Back" />

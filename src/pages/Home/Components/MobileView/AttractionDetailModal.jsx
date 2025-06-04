@@ -7,7 +7,7 @@ function AttractionDetailModal({ attraction, onClose, onBack, onAddToCart }) {
 
   return (
     <div className="attraction-detail-modal-overlay">
-      <div className="attraction-detail-modal">
+      <div className="attraction-detail-modal" style={{ height: "85vh" }}>
         <div className="attraction-detail-modal__header">
           <button className="attraction-detail-modal__back" onClick={onBack}>
             <img src={backIcon} alt="Back" />

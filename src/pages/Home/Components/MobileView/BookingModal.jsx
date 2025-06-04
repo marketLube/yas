@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import closeIcon from "../../../../assets/images/close.svg"; // Use your close icon
 import backIcon from "../../../../assets/images/back.svg"; // Use your back icon
 
-function BookingModal({ onClose, onBack, onSaveToCart }) {
+function BookingModal({ onClose, onBack, onSaveToCart, onCheckout }) {
   // Example state for guests
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(1);
@@ -15,7 +15,7 @@ function BookingModal({ onClose, onBack, onSaveToCart }) {
 
   return (
     <div className="booking-modal-overlay">
-      <div className="booking-modal">
+      <div className="booking-modal" style={{ height: "90vh" }}>
         <div className="booking-modal__header">
           <button className="booking-modal__back" onClick={onBack}>
             <img src={backIcon} alt="Back" />
@@ -89,7 +89,7 @@ function BookingModal({ onClose, onBack, onSaveToCart }) {
           </div>
         </div>
         <div className="booking-modal__footer">
-          <button className="booking-modal__checkout">
+          <button className="booking-modal__checkout" onClick={onCheckout}>
             Check out <span style={{ color: "red" }}>AED 985.00</span>
           </button>
           <button className="booking-modal__save" onClick={onSaveToCart}>
