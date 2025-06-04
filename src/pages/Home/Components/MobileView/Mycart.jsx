@@ -5,7 +5,7 @@ import trashIcon from "../../../../assets/images/trash.svg";
 import frame1 from "../../../../assets/images/frame1.png";
 import { useNavigate } from "react-router-dom";
 
-function Mycart({ onClose, onBack, onCheckout }) {
+function Mycart({ onClose, onBack, onCheckout, onSaveAndPayLater }) {
   // Example cart data
   const [cartItems, setCartItems] = useState([
     {
@@ -129,7 +129,9 @@ function Mycart({ onClose, onBack, onCheckout }) {
           <button className="cart-modal__checkout" onClick={onCheckout}>
             Check out
           </button>
-          <button className="cart-modal__save">Save cart & pay later</button>
+          <button className="cart-modal__save" onClick={() => navigate(-1)}>
+            Save cart & pay later
+          </button>
         </div>
       </div>
     </div>

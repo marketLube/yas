@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import MobileHeader from "./MobileHeader"; // Adjust the import path as needed
 import ConfirmEmail from "./ConfirmEmail";
+import backIcon from "../../../../assets/images/back.svg";
 
-function EmailVerification({ onClose, onConfirmEmail }) {
+function EmailVerification({ onClose, onConfirmEmail, onBack }) {
   const [email, setEmail] = useState("vivek@dev.panashi.ae");
   const [step, setStep] = useState(1); // 1 = email, 2 = confirm email
   const [showEmailVerification, setShowEmailVerification] = useState(true);
@@ -26,8 +27,16 @@ function EmailVerification({ onClose, onConfirmEmail }) {
             <div className="email-verification__title">
               Guest details and payment
             </div>
-            <button className="email-verification__back-btn" onClick={onClose}>
-              ←
+            <button
+              className="email-verification__back-btn"
+              onClick={onBack ? onBack : onClose}
+              type="button"
+            >
+              <img
+                src={backIcon}
+                alt="Back"
+                style={{ width: 24, height: 24 }}
+              />
             </button>
             <div className="email-verification__steps">
               <div
@@ -62,7 +71,7 @@ function EmailVerification({ onClose, onConfirmEmail }) {
               />
             </label>
             <button className="email-verification__confirm-btn" type="submit">
-              Continue
+              Confirm Email
             </button>
           </form>
         </div>

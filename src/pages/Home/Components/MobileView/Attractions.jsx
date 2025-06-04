@@ -159,6 +159,10 @@ function Attractions() {
             setShowBookingModal(false);
             setShowEmailVerification(true);
           }}
+          onBack={() => {
+            setShowBookingModal(false);
+            setShowAttractionDetail(true);
+          }}
         />
       )}
       {showMyCart && (
@@ -168,11 +172,23 @@ function Attractions() {
             setShowMyCart(false);
             setShowEmailVerification(true);
           }}
+          onSaveAndPayLater={() => {
+            setShowMyCart(false);
+            setShowBookingModal(true);
+          }}
+          onBack={() => {
+            setShowMyCart(false);
+            setShowAttractionDetail(true);
+          }}
         />
       )}
       {showEmailVerification && (
         <EmailVerification
           onClose={() => setShowEmailVerification(false)}
+          onBack={() => {
+            setShowEmailVerification(false);
+            setShowMyCart(true);
+          }}
           onConfirmEmail={() => {
             setShowEmailVerification(false);
             setShowCheckOut(true);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MobileHeader from "./MobileHeader"; // Adjust the import path as needed
+import backIcon from "../../../../assets/images/back.svg";
 
 function ConfirmEmail({
   email = "vivek@dev.panashi.ae",
@@ -45,8 +46,12 @@ function ConfirmEmail({
         </div>
         <div className="confirm-email__content">
           <div className="confirm-email__title">Guest details and payment</div>
-          <button className="confirm-email__back-btn" onClick={onBack}>
-            ←
+          <button
+            className="confirm-email__back-btn"
+            onClick={onBack}
+            type="button"
+          >
+            <img src={backIcon} alt="Back" style={{ width: 24, height: 24 }} />
           </button>
           <div className="confirm-email__steps">
             <div className="confirm-email__step confirm-email__step--active">
