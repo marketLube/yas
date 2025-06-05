@@ -7,6 +7,9 @@ function AttractionDetailModal({ attraction, onClose, onBack, onAddToCart }) {
 
   return (
     <div className="attraction-detail-modal-overlay">
+      <span className="attraction-detail-modal__close" onClick={onClose}>
+        <img src={closeIcon} alt="close" />
+      </span>
       <div className="attraction-detail-modal" style={{ height: "85vh" }}>
         <div className="attraction-detail-modal__header">
           <button className="attraction-detail-modal__back" onClick={onBack}>
@@ -15,9 +18,6 @@ function AttractionDetailModal({ attraction, onClose, onBack, onAddToCart }) {
           <span className="attraction-detail-modal__title">
             {attraction.title}
           </span>
-          <button className="attraction-detail-modal__close" onClick={onClose}>
-            <img src={closeIcon} alt="Close" />
-          </button>
         </div>
         <div className="attraction-detail-modal__body">
           <img
@@ -32,8 +32,9 @@ function AttractionDetailModal({ attraction, onClose, onBack, onAddToCart }) {
             {attraction.detailDesc || attraction.desc}
           </div>
         </div>
+        <div className="attraction-detail-modal__footer-divider"></div>
         <div className="attraction-detail-modal__footer">
-          <div>
+          <div className="attraction-detail-modal__footer-left">
             <div className="attraction-detail-modal__price">
               {attraction.detailPrice || attraction.price}
             </div>
@@ -41,12 +42,15 @@ function AttractionDetailModal({ attraction, onClose, onBack, onAddToCart }) {
               {attraction.detailVat || attraction.vat}
             </div>
           </div>
-          <button
-            className="attraction-detail-modal__add-btn"
-            onClick={onAddToCart}
-          >
-            + Add to cart
-          </button>
+          <div className="attraction-detail-modal__footer-vertical-divider"></div>
+          <div className="attraction-detail-modal__footer-right">
+            <button
+              className="attraction-detail-modal__add-btn"
+              onClick={onAddToCart}
+            >
+              + Add to cart
+            </button>
+          </div>
         </div>
       </div>
     </div>

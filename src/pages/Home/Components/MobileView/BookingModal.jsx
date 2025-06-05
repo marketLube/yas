@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import closeIcon from "../../../../assets/images/close.svg"; // Use your close icon
 import backIcon from "../../../../assets/images/back.svg"; // Use your back icon
+import leftIcon from "../../../../assets/images/left.svg";
 
 function BookingModal({ onClose, onBack, onSaveToCart, onCheckout }) {
   // Example state for guests
@@ -29,10 +30,21 @@ function BookingModal({ onClose, onBack, onSaveToCart, onCheckout }) {
           {/* Calendar */}
           <div className="booking-modal__calendar">
             <div className="booking-modal__calendar-header">
-              <button>{"<"}</button>
-              <span>February 2025</span>
-              <button>{">"}</button>
+              <button>
+                <img
+                  src={leftIcon}
+                  alt="Previous"
+                  className="booking-modal__calendar-arrow--rotated"
+                />
+              </button>
+              <span className="booking-modal__calendar-month">
+                February 2025
+              </span>
+              <button>
+                <img src={leftIcon} alt="Next" />
+              </button>
             </div>
+            <div className="booking-modal__calendar-divider"></div>
             <div className="booking-modal__calendar-grid">
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((d) => (
                 <span key={d} className="booking-modal__calendar-dayname">
